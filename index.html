@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles.css">
     <title>my-brand-norbert</title>
   </head>
   <body>
@@ -21,10 +22,8 @@
       </ul>
     </nav>
     <!--menu for small screens-->
-    <nav class="small-screen-nav">
-      <div class="logo">
+    <nav class="small-screen-nav grid">
         <h1>N.M</h1>
-      </div>
       <div class="menu-btn">&#9776;</div>
       <div class="small-nav">
         <div class="nav-links">
@@ -45,8 +44,8 @@
           <img src="assets/images/passport-2.jpg" alt="my face" />
         </div>
         <div class="welcome-texts">
-          <h2>Hello,</h2>
-          <h1>I'm Norbert NIRUGIRA Muhizi,</h1>
+          <h2 class="hello">Hello,</h2>
+          <h2><span class="am">I'm </span><span class="norbert">Norbert NIRUGIRA Muhizi,</span></h2>
           <p class="leading">An enthusiastic software engineer.</p>
         </div>
         <button class="resume-btn"><a href="assets/Resume.pdf"></a>Resume</button>
@@ -58,7 +57,7 @@
           <div class="reading">
             <p class="about-me-paragraph">
               Hi! <br />
-              My name is Nirugira M. Norbert, I am a Junior software developer.
+              My name is Nirugira M. Norbert, <span class="iamjunior">I am a Junior software developer.</span>
               Since my childhood, i have always been intrigued by being called a
               software developer. i started this by following computer Science
               in high school, and currently pursuing an ATLP to enhance my
@@ -70,26 +69,28 @@
             </p>
           </div>
           <div class="skills">
-            <h3>Tech <span class="stack">Stack</span></h3>
+			<div class="header">
+				<h3>Tech <span class="stack">Stack</span></h3>
+			</div>
             <div class="languages">
               <h4>languages</h4>
-              <img src="assets/images/JavaScript.svg" alt="js" />
-              <img src="assets/images/Php.svg" alt="php" />
+              <img src="assets/images/JavaScript.svg" alt="js" class="size-icons" />
+              <img src="assets/images/Php.svg" alt="php" class="size-icons" />
             </div>
             <div class="others">
               <h4>others</h4>
-              <img src="assets/images/html.svg" alt="html" />
-              <img src="assets/images/tailwind.svg" alt="tail" />
+              <img src="assets/images/html.svg" alt="html" class="size-icons" />
+              <img src="assets/images/tailwind.svg" alt="tail" class="size-icons" />
             </div>
             <div class="tools">
               <h4>Tools</h4>
-              <img src="assets/images/VSCode.svg" alt="vs" />
-              <img src="assets/images/Figma.svg" alt="Figma" />
-              <img src="assets/images/Git.svg" alt="git" />
+              <img src="assets/images/VSCode.svg" alt="vs" class="size-icons" />
+              <img src="assets/images/Figma.svg" alt="Figma" class="size-icons" />
+              <img src="assets/images/Git.svg" alt="git" class="size-icons" />
             </div>
             <div class="database">
-              <h4>languages</h4>
-              <img src="assets/images/mongodb.svg" alt="mongo" />
+              <h4>Database</h4>
+              <img src="assets/images/mongodb.svg" alt="mongo" class="size-icons" />
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@
             program. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident. See live demo
-            <a href="singleblog.html" class="style-link">here</a>
+            <a href="#" class="style-link">here</a>
           </p>
         </div>
 
@@ -172,24 +173,24 @@
 	  <section id="contact">
 		<h3>Get in <span class="touch"> Touch</span></h3>
 		<form>
-			<input type="text" placeholder="Name">
-			<input type="email" placeholder="Email">
-			<textarea placeholder="message"></textarea>
+			<input type="text" class="style-input" placeholder="Name">
+			<input type="email" class="style-input" placeholder="Email">
+			<textarea class="style-input" placeholder="message"></textarea>
             <button class="contact-btn">send message</button>
 		</form>
 		<p>I am <span class="social">social</span></p>
 		<div class="social-icons">
-			<img src="assets/images/linkedin.svg" alt="in">
-			<img src="assets/images/insta.svg" alt="insta">
-			<img src="assets/images/facebook.svg" alt="fb">
-			<img src="assets/images/twitter.svg" alt="x">
+			<li><img src="assets/images/linkedin.svg" alt="in"></li>
+			<li><img src="assets/images/insta.svg" alt="insta"></li>
+			<li><img src="assets/images/facebook.svg" alt="fb"></li>
+			<li><img src="assets/images/twitter.svg" alt="x"></li>
 		</div>
 	  </section>
     </div>
 	<footer>
 		<div class="subscribe">
 			<h5>subscribe</h5>
-			<input type="email" placeholder="your email">
+			<input type="email" class="style-input" placeholder="your email">
 			<button class="subscribe-btn"><img src="assets/images/Send Icon.svg" alt="send"></button>
 	    </div>
 			<ul class="footer-items">
@@ -201,10 +202,10 @@
 				<a href="#">support me</a>
 			</ul>
 		<div class="social-icons">
-			<img src="assets/images/linkedin.svg" alt="in">
-			<img src="assets/images/insta.svg" alt="insta">
-			<img src="assets/images/facebook.svg" alt="fb">
-			<img src="assets/images/twitter.svg" alt="x">
+			<li><img src="assets/images/linkedin.svg" alt="in"></li>
+			<li><img src="assets/images/insta.svg" alt="insta"></li>
+			<li><img src="assets/images/facebook.svg" alt="fb"></li>
+			<li><img src="assets/images/twitter.svg" alt="x"></li>
 		</div>
 		<p>&#169;2024, All rights reserved</p>
 	</footer>
