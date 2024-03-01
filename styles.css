@@ -1,0 +1,202 @@
+:root{
+	--back: #0E0E0E;
+	--universal: #FFFFFF;
+	--primary: #FCA311;
+	--secondary: #DCC9AA;
+
+}
+
+/* resetting browser's default styles */
+body,p,a,ul,li{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+li{
+	list-style-type: none;
+}
+/* basic styles */
+body{
+	background: var(--back);
+	overflow-x: hidden;
+	color: var(--universal);
+}
+input, textarea{
+	background: none;
+	border: 0.5px solid;
+	border-color: var(--secondary);
+	border-radius: 5px;
+	display: inline-block;
+	outline: none;
+}
+.style-input{
+	color: var(--universal);
+}
+.style-input:focus{
+	box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+}
+/* fonts */
+@font-face {
+	font-family: 'lato';
+	src: url(assets/fonts/Lato-Regular.ttf);
+}
+@font-face {
+	font-family: 'lato thin';
+	src: url(assets/fonts/Lato-Light.ttf);
+	
+}
+@font-face {
+	font-family: 'josefin sans';
+	src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: 'poppins';
+	src: url(assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+	font-family: 'frank';
+	src: url(assets/fonts/FrankRuhlLibre-VariableFont_wght.ttf);
+}
+h1{
+	font-size: 1.8em;
+	font-family: josefin sans;
+	font-weight: 400;
+	color: var(--primary);
+}
+h2{
+	font-size: 1.4em;
+}
+h3{
+   font-size: 1.5em;
+}
+h4{
+	font-size: 1em;
+}
+p{
+	font-size: 1.1em;
+}
+
+/* small screen styles */
+.grid{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(8,1fr);
+}
+.large-screen-nav, .nav-links{
+	display: none;
+	background: #000000;
+}
+.menu-btn{
+	color: var(--universal);
+	font-size: 1.8em;
+}
+.small-screen-nav{
+	margin:0 20px;
+}
+.small-screen-nav h1{
+	grid-column: 1/8;
+	grid-row: 1;
+}
+.menu-btn{
+	margin: 15px auto;
+}
+#home{
+	padding: 10px auto;
+}
+.welcome-img{
+	grid-column: 1/9;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-left: 90px;
+}
+.welcome-img img{
+	width: 100%;
+	height: 100%;
+}
+.welcome-texts{
+	line-height: 4em;
+	grid-column: 1/9;
+	margin-left: 70px;
+}
+.hello{
+	font-family: lato;
+}
+.welcome-texts h2{
+	font-family: josefin sans;
+}
+.am{
+	font-weight: 300;
+}
+.leading{
+	font-family: poppins;
+	color: var(--secondary);
+}
+.resume-btn{
+	font-family: lato;
+	font-size: 1em;
+	margin: 80px 70px;
+	padding: 15px 100px;
+	border-radius: 30px;
+	border-style: none;
+	background: var(--secondary);
+}
+.resume-btn:hover{
+	background: var(--universal);
+	cursor: pointer;
+}
+#about {
+	padding: 50px 50px;
+}
+#about h3{
+	font-family: josefin sans;
+	font-weight: 600;
+	margin-left: 30px;
+	margin-bottom: 60px;
+}
+.get-to-know, .iamjunior, .stack{
+ color: var(--primary);
+}
+.reading, .skills{
+	line-height: 1.8em;
+	background: #000000;
+	padding: 40px 30px 80px 40px ;
+	grid-column: 1/9;
+	margin-bottom: 50px;
+	border-radius: 15px;
+	font-family: 'lato thin';
+}
+.header{
+	text-align: center;
+	margin-left: -50px;
+}
+.languages h4,.others h4,.tools h4,.database h4{
+	font-family:'lato thin';
+	font-weight: 100;
+}
+.size-icons{
+	width: 1cm;
+	height: 1cm;
+}
+/* tablet styles */
+
+@media screen and (min-width: 620px){
+	body{
+		font-size: 17px;
+	}
+}
+
+/* laptop styles */
+@media screen and (min-width: 960px){
+	body{
+		font-size: 18px;
+	}
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px){
+	body{
+		font-size: 20px;
+	}
+}
