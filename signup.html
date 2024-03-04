@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css">
     <title>Sign Up</title>
   </head>
   <body>
     <div class="container">
       <h2>Let's get you <span class="in">In!</span></h2>
-	  <p>Already have an account?<a href="signin.html" class="sign-in">Log in</a></p>
+	  <p>Already have an account? <a href="signin.html" class="sign-in">Log in</a></p>
       <form>
-		<label for="name">what should we call you?</label>
-        <input type="text" id="name" placeholder="enter your full name" />
-        <label for="email">email</label>
-        <input type="text" id="email" placeholder="enter your email address" />
-        <label for="key">password</label>
+        <div class="name-input">
+          <label for="name">what should we call you?</label>
+          <input type="text" id="name" placeholder="enter your full name" />
+        </div>
+        <div class="email-input">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="enter your email address" />
+        </div>
+        <div class="password-input">
+          <label for="key">Password</label>
         <input type="password" id="key" placeholder="enter your password" />
-        <h5>forgot password?</h5>
+        </div>
         <button class="signin-btn">create an account</button>
       </form>
     </div>

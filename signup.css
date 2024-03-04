@@ -1,0 +1,155 @@
+:root {
+	--back: #0e0e0e;
+	--universal: #ffffff;
+	--primary: #fca311;
+	--secondary: #dcc9aa;
+  }
+  /* resetting browser's default styles */
+  body,
+  p,
+  a,
+  ul,
+  li {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+  }
+  li {
+	list-style-type: none;
+  }
+  /* basic styles */
+  body {
+	background: var(--back);
+	overflow-x: hidden;
+	color: var(--universal);
+  }
+  input,
+  textarea {
+	background: none;
+	border: 0.5px solid var(--secondary);
+	border-radius: 10px;
+	display: inline-block;
+	outline: none;
+	font-family: "lato small";
+  }
+  /* fonts */
+  @font-face {
+	font-family: "lato";
+	src: url(assets/fonts/Lato-Regular.ttf);
+  }
+  @font-face {
+	font-family: "lato small";
+	src: url(assets/fonts/Lato-Light.ttf);
+  }
+  @font-face {
+	font-family: "lato thin";
+	src: url(assets/fonts/Lato-Thin.ttf);
+  }
+  @font-face {
+	font-family: "josefin sans";
+	src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
+  }
+  h2 {
+	font-size: 2em;
+  }
+  p {
+	font-size: 0.8em;
+  }
+  label {
+	font-size: 1em;
+	margin-bottom: 15px;
+	font-family: 'lato small';
+  }
+  /* small screen styles */
+  
+  .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+  }
+  form {
+	width: 70%;
+	max-width: 400px;
+	margin: 20px auto;
+  }
+  .container h2 {
+	font-family: josefin sans;
+	font-weight: 500;
+  }
+  .in {
+	color: var(--primary);
+  }
+ .container p{
+	font-family: lato;
+  }
+  .name-input,.email-input,
+  .password-input {
+  
+	display: flex;
+	flex-direction: column;
+  }
+  #email , #name{
+	margin-bottom: 30px;
+	height: 30px;
+	color: var(--universal);
+	text-indent: 10px;
+  }
+  #key {
+	text-indent: 10px;
+	margin-bottom: 10px;
+	height: 30px;
+	color: var(--universal);
+  }
+  form button{
+	  width: 100%;
+	  border-style: none;
+	  margin: 50px auto ;
+	  padding: 10px 130px;
+	  background: var(--secondary);
+	  font-family: lato;
+	  border-radius: 40px;
+	  font-size: 0.7em;
+  }
+  form button:hover{
+	  background: var(--universal);
+	  cursor:pointer;
+  }
+  p a{
+	  text-decoration: underline;
+	  color:var(--universal);
+  }
+  form p a:hover{
+	  color: var(--secondary);
+  }
+  form p{
+	  font-family: 'lato small';
+	  text-align: center;
+  }
+  
+  /* tablet screens */
+  
+  @media screen and (min-width: 700px) {
+	body {
+	  font-size: 15px;
+	}
+  }
+  
+  /* laptop screens */
+  
+  @media screen and (min-width: 960px) {
+	body {
+	  font-size: 17px;
+	}
+  }
+  
+  /* desktop screens */
+  
+  @media screen and (min-width: 1200px) {
+	body {
+	  font-size: 19px;
+	}
+  }
+  
