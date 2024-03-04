@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signin.css">
     <title>Sign In</title>
   </head>
   <body>
     <div class="container">
       <h2>Sign <span class="in">In</span></h2>
       <form>
-        <label for="email">email</label>
-        <input type="text" id="email" />
-        <label for="key">password</label>
-        <input type="password" id="key" />
-        <h4>forgot password?</h4>
+        <div class="email-input">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+        </div>
+        <div class="password-input">
+          <label for="key">Password</label>
+          <input type="password" id="key" />
+          <a href="#" class="forgot-password">forgot password?</a>
+        </div>
         <button class="signin-btn">Log in</button>
-        <p><a href="signup.html" class="sign-up">Sign up</a> if you don't have an account</p>
+        <p><a href="signup.html" class="sign-up">Sign up </a> if you don't have an account</p>
       </form>
     </div>
   </body>
