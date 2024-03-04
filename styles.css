@@ -265,11 +265,11 @@ footer p {
 .first-blog img {
   width: 250px;
 }
-.blog-contents.grid{
-	display: grid;
-	grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
+.blog-contents.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
 .first-blog h4 {
   font-family: lato;
   font-weight: 200;
@@ -455,10 +455,10 @@ footer p,
   }
 
   .about-me {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-} 
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+  }
 
   #projects h3 {
     width: 25%;
@@ -527,19 +527,19 @@ footer p,
     display: none;
   }
   .large-screen-nav {
-	background-color: black;
-	display: block;
+    background-color: black;
+    display: block;
     position: fixed;
     width: 100%;
-	height: 140px;
-	margin-bottom: 50px;
+    height: 140px;
+    margin-bottom: 50px;
   }
-  main{
-	padding-top: 180px;
+  main {
+    padding-top: 180px;
   }
-  section{
-	scroll-margin-top: 100px;
-	scroll-margin-left: 30px;
+  section {
+    scroll-margin-top: 100px;
+    scroll-margin-left: 30px;
   }
   .logo {
     display: flex;
@@ -571,7 +571,7 @@ footer p,
     margin: 100px 100px 0 50px;
   }
   .welcome-texts {
-	margin-top: 80px;
+    margin-top: 80px;
     line-height: 3em;
   }
   #about {
@@ -579,6 +579,11 @@ footer p,
   }
   .about-me {
     flex-direction: row;
+  }
+  .reading {
+    width: 700px;
+    height: 1500px;
+    padding: 22px 30px 80px 40px;
   }
   .skills {
     margin-left: 50px;
@@ -589,16 +594,17 @@ footer p,
   #projects h3 {
     width: 25%;
   }
-  .blog-contents.grid{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+  .blog-contents.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
-  .first-blog img{
-	margin-left: -100px;
+  .first-blog img {
+    margin-left: -100px;
   }
-  .likes img,.comments img{
-		margin-left: 0;
+  .likes img,
+  .comments img {
+    margin-left: 0;
   }
   #contact form {
     width: 100%;
@@ -638,23 +644,24 @@ footer p,
   body {
     font-size: 20px;
   }
-  .grid{
-	max-width: 1200px;
-	justify-content: center;
+  .grid {
+    max-width: 1200px;
+    justify-content: center;
   }
   .welcome-img {
-	width: 250px;
-	height: 270px;
-	grid-column:2/4;
+    width: 250px;
+    height: 270px;
+    grid-column: 2/4;
   }
-  .welcome-texts{
-	grid-column: 4/9;
-	margin-left: 120px;
+  .welcome-texts {
+    grid-column: 4/9;
+    margin-left: 120px;
   }
-  .resume-btn{
-	grid-column: 3/7;
-	margin-left: 320px;
+  .resume-btn {
+    grid-column: 3/7;
+    margin-left: 320px;
   }
+
   #projects {
     margin: auto 200px;
   }
@@ -664,16 +671,17 @@ footer p,
   #blogs {
     margin: auto 150px auto 250px;
   }
-  .first-blog img{
-	margin-left: -115px;
+  .first-blog img {
+    margin-left: -115px;
   }
-  .likes img,.comments img{
-	margin-left: 0;
-}
-.left-side input{
-	width: 50%;
-}
-.contact-form {
+  .likes img,
+  .comments img {
+    margin-left: 0;
+  }
+  .left-side input {
+    width: 50%;
+  }
+  .contact-form {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 0 0 0 50px;
@@ -685,7 +693,7 @@ footer p,
     grid-column: 5/7;
   }
   .contact-form button {
-	margin-left: -100px;
+    margin-left: -100px;
     grid-column: 4/6;
   }
   .contact-btn {
