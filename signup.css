@@ -7,15 +7,10 @@
   /* resetting browser's default styles */
   body,
   p,
-  a,
-  ul,
-  li {
+  a{
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-  }
-  li {
-	list-style-type: none;
   }
   /* basic styles */
   body {
@@ -31,6 +26,20 @@
 	display: inline-block;
 	outline: none;
 	font-family: "lato small";
+  }
+  h2 {
+	font-size: 2em;
+  }
+  p {
+	font-size: 0.8em;
+  }
+  label {
+	font-size: 1em;
+	margin-bottom: 15px;
+	font-family: 'lato small';
+  }
+  .style-input:focus {
+	box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
   }
   /* fonts */
   @font-face {
@@ -49,17 +58,7 @@
 	font-family: "josefin sans";
 	src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
   }
-  h2 {
-	font-size: 2em;
-  }
-  p {
-	font-size: 0.8em;
-  }
-  label {
-	font-size: 1em;
-	margin-bottom: 15px;
-	font-family: 'lato small';
-  }
+
   /* small screen styles */
   
   .container {
@@ -84,6 +83,7 @@
   }
  .container p{
 	font-family: lato;
+	margin-bottom: 30px;
   }
   .name-input,.email-input,
   .password-input {
@@ -121,7 +121,7 @@
 	  text-decoration: underline;
 	  color:var(--universal);
   }
-  form p a:hover{
+  p a:hover{
 	  color: var(--secondary);
   }
   form p{
