@@ -192,11 +192,6 @@ footer p {
 .touch {
   color: var(--primary);
 }
-.about-me {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-}
 .reading,
 .skills {
   line-height: 1.8em;
@@ -269,8 +264,12 @@ footer p {
 }
 .first-blog img {
   width: 250px;
-  margin-left: 70px;
 }
+.blog-contents.grid{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 .first-blog h4 {
   font-family: lato;
   font-weight: 200;
@@ -444,7 +443,7 @@ footer p,
   .resume-btn {
     width: 45%;
     grid-column: 3/9;
-    margin: 80px auto;
+    margin: 30px auto;
     padding: 8px 90px;
   }
   .reading,
@@ -453,6 +452,16 @@ footer p,
     max-height: 650px;
     width: 100%;
     max-width: 400px;
+  }
+
+  .about-me {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+} 
+
+  #projects h3 {
+    width: 25%;
   }
   .first-blog img {
     width: 300px;
@@ -511,24 +520,30 @@ footer p,
     font-size: 18px;
   }
   .grid {
-    max-width: 1060px;
+    max-width: 1000px;
     margin: 0 auto;
   }
   .small-screen-nav {
     display: none;
   }
   .large-screen-nav {
-	
-    display: contents;
+	background-color: black;
+	display: block;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+	height: 140px;
+	margin-bottom: 50px;
+  }
+  main{
+	padding-top: 180px;
+  }
+  section{
+	scroll-margin-top: 100px;
+	scroll-margin-left: 30px;
   }
   .logo {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
   .logo h1 {
     margin: 20px 0;
@@ -536,9 +551,6 @@ footer p,
   .links ul {
     display: flex;
     justify-content: space-evenly;
-  }
-  .links {
-    margin-bottom: 130px;
   }
   .links ul li a {
     color: var(--universal);
@@ -556,9 +568,10 @@ footer p,
   .welcome-img {
     width: 250px;
     height: 250px;
-    margin: 25px 100px 0 50px;
+    margin: 100px 100px 0 50px;
   }
   .welcome-texts {
+	margin-top: 80px;
     line-height: 3em;
   }
   #about {
@@ -571,13 +584,21 @@ footer p,
     margin-left: 50px;
   }
   #projects {
-    margin: auto 100px;
+    margin: auto 30px;
   }
   #projects h3 {
     width: 25%;
   }
-  #blogs {
-    margin: auto 100px;
+  .blog-contents.grid{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .first-blog img{
+	margin-left: -100px;
+  }
+  .likes img,.comments img{
+		margin-left: 0;
   }
   #contact form {
     width: 100%;
@@ -616,5 +637,59 @@ footer p,
 @media screen and (min-width: 1200px) {
   body {
     font-size: 20px;
+  }
+  .grid{
+	max-width: 1200px;
+	justify-content: center;
+  }
+  .welcome-img {
+	width: 250px;
+	height: 270px;
+	grid-column:2/4;
+  }
+  .welcome-texts{
+	grid-column: 4/9;
+	margin-left: 120px;
+  }
+  .resume-btn{
+	grid-column: 3/7;
+	margin-left: 320px;
+  }
+  #projects {
+    margin: auto 200px;
+  }
+  #projects h3 {
+    width: 20%;
+  }
+  #blogs {
+    margin: auto 150px auto 250px;
+  }
+  .first-blog img{
+	margin-left: -115px;
+  }
+  .likes img,.comments img{
+	margin-left: 0;
+}
+.left-side input{
+	width: 50%;
+}
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 0 0 0 50px;
+  }
+  .left-side {
+    grid-column: 2/4;
+  }
+  .contact-form textarea {
+    grid-column: 5/7;
+  }
+  .contact-form button {
+	margin-left: -100px;
+    grid-column: 4/6;
+  }
+  .contact-btn {
+    margin-top: 30px;
+    padding: 10px;
   }
 }
