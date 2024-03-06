@@ -69,10 +69,22 @@
 	width: 100vw;
 	height: 100vh;
   }
+  @keyframes slideInFromLeft{
+	0%{
+	  transform: translateX(100%);
+	}
+	100%{
+	  transfrom: translateX(0);
+	}
+  }
   form {
 	width: 70%;
 	max-width: 400px;
 	margin: 20px auto;
+	padding: 60px 20px 0 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  animation: 0.5s ease-out 0s 1 slideInFromLeft;
   }
   .container h2 {
 	font-family: josefin sans;
@@ -142,6 +154,9 @@
   @media screen and (min-width: 960px) {
 	body {
 	  font-size: 17px;
+	}
+	.container h2{
+		margin-top: 180px;
 	}
   }
   
