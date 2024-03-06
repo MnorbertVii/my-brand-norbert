@@ -3,10 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="signup.css">
+    <script defer src="main.js"></script>
     <title>Sign Up</title>
   </head>
   <body>
+
+<!--menu for large screens-->
+<nav class="large-screen-nav">
+  <div class="logo">
+    <h1><a href="index.html#home">N.M</a></h1>
+  </div>
+  <div class="links">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#blogs">Blogs</a></li>
+      <li><a href="index.html#contact">Contact me</a></li>
+      <li><a href="signin.html">Sign in</a></li>
+    </ul>
+  </div>
+</nav>
+<!--menu for small screens-->
+<nav class="small-screen-nav grid">
+  <h1><a href="index.html#home">N.M</a></h1>
+  <div class="menu-btn">
+    <svg
+      onclick="showMenubar()"
+      xmlns="http://www.w3.org/2000/svg"
+      height="35"
+      viewBox="0 -960 960 960"
+      width="35"
+    >
+      <path
+        d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+      />
+    </svg>
+  </div>
+  <div class="small-nav">
+    <div class="nav-links">
+      <svg onclick= hideMenubar()
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 -960 960 960"
+        width="24"
+      >
+        <path
+          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+        />
+      </svg>
+      <h3 class="menu">menu</h3>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#blogs">Blogs</a>
+      <a href="index.html#contact">Contact me</a>
+      <a href="signin.html">Sign in</a>
+    </div>
+  </div>
+</nav>
+
     <div class="container">
       <h2>Let's get you <span class="in">In!</span></h2>
 	  <p>Already have an account? <a href="signin.html" class="sign-in">Log in</a></p>
