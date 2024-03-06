@@ -68,12 +68,25 @@ label {
   width: 100vw;
   height: 100vh;
 }
+@keyframes slideInFromLeft{
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transfrom: translateX(0);
+  }
+}
 form {
   width: 70%;
   max-width: 400px;
   margin: 20px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 .container h2 {
+  margin-top: 80px;
   font-family: josefin sans;
   font-weight: 500;
 }
@@ -96,12 +109,6 @@ form {
   height: 40px;
   color: var(--universal);
 }
-.password-input {
-  position: relative;
-}
-.password-input .forgot-passsword {
-  position: absolute;
-}
 .password-input a {
 font-family: 'lato small' ;
 font-size: 0.7em;
@@ -112,7 +119,7 @@ form button{
 	width: 100%;
 	border-style: none;
 	margin: 50px auto ;
-	padding: 10px 155px;
+	padding: 10px;
 	background: var(--secondary);
 	font-family: lato;
 	border-radius: 40px;
@@ -147,6 +154,10 @@ form p{
   body {
     font-size: 17px;
   }
+  .container h2{
+    margin-top: 180px;
+  }
+
 }
 
 /* desktop screens */
