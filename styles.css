@@ -102,26 +102,99 @@ footer p {
   width: 100%;
   grid-template-columns: repeat(8, 1fr);
 }
-.large-screen-nav,
-.nav-links {
+.large-screen-nav {
   display: none;
 }
-.menu-btn {
-  color: var(--universal);
-  font-size: 1.8em;
+.nav-links a.active {
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+}
+.menu-btn svg,
+.nav-links svg {
+  fill: white;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.menu-btn svg:hover,
+.nav-links svg:hover {
+  fill: var(--secondary);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.nav-links svg {
+  margin-top: 20px;
+  margin-left: -20px;
+}
+.nav-links {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  box-shadow: -2px 0 10px rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.979);
+  display: none;
+  flex-direction: column;
+  padding: 0 0 0 190px;
+  gap: 15px;
+}
+.nav-links a,
+.nav-links h3,
+svg {
+  color: white;
+  width: 100px;
+  text-transform: uppercase;
+  font-family: "lato thin";
+  padding: 10px;
+}
+.nav-links a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
 }
 .small-screen-nav {
-  background: #000000;
-  margin: 0 20px 50px 0;
+  width: 100vw;
+  position: fixed;
+  background: black;
+  margin-bottom: 50px;
+}
+.menu {
+  margin: 0;
+  padding: 0;
+  font-family: "lato small";
+  font-size: 1.2em;
 }
 .small-screen-nav h1 {
-  padding-left: 15px;
+  padding-top: 8px;
+  padding-left: 20px;
   grid-column: 1/8;
   grid-row: 1;
 }
-.menu-btn {
-  margin: 15px auto;
+.small-screen-nav h1 a {
+  color: var(--primary);
+  transition: all 0.3s ease;
+  display: inline-block;
 }
+
+.small-screen-nav h1 a:hover {
+  transform: scale(1.1);
+  color: var(--secondary);
+}
+
+.menu-btn {
+  margin: 15px 15px;
+  width: 5em;
+}
+main {
+  padding-top: 150px;
+}
+section {
+  scroll-margin-top: 90px;
+  scroll-margin-left: 30px;
+}
+
 #home {
   padding: 10px auto;
 }
@@ -131,16 +204,17 @@ footer p {
   height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  margin-left: 90px;
+  margin-left: 45px;
 }
 .welcome-img img {
   width: 100%;
   height: 100%;
 }
+
 .welcome-texts {
   line-height: 4em;
   grid-column: 1/9;
-  margin-left: 70px;
+  margin-left: 35px;
 }
 .hello {
   font-family: lato;
@@ -158,7 +232,7 @@ footer p {
 .resume-btn {
   font-family: lato;
   font-size: 1em;
-  margin: 80px 70px;
+  margin: 80px 35px;
   padding: 15px 100px;
   border-radius: 10px;
   border-style: none;
@@ -182,7 +256,7 @@ footer p {
   font-family: josefin sans;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 .get-to-know,
 .iamjunior,
@@ -202,10 +276,22 @@ footer p {
   border-radius: 15px;
   font-family: "lato small";
 }
+@keyframes slideInFromLeft{
+	0%{
+	  transform: translateX(-100%);
+	}
+	100%{
+	  transfrom: translateX(0);
+	}
+  }
+.reading{
+  animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
 .header {
   text-align: center;
   margin-left: -50px;
 }
+
 .languages h4,
 .others h4,
 .tools h4,
@@ -321,7 +407,7 @@ footer p {
 }
 .contact-btn {
   font-family: "lato small";
-  padding: 10px 110px;
+  padding: 10px 70px;
   background: var(--secondary);
   border-style: none;
   border-radius: 20px;
@@ -350,8 +436,9 @@ footer p {
 }
 /* footer styles */
 footer {
-  padding: 30px 35px;
+  width: 100vw;
   background: #000000;
+  padding: 0 -20px;
 }
 .subscribe,
 .footer-items,
@@ -360,21 +447,24 @@ p {
   grid-column: 1/9;
 }
 .subscribe {
+  margin-top: 20px;
   font-family: josefin sans;
   justify-content: center;
   align-items: center;
 }
 h5 {
   grid-column: 1/2;
-  margin-left: 25px;
+  margin-left: 35px;
+  margin-right: 7px;
 }
 .subscribe input {
-  grid-column: 3/8;
+  grid-column: 3/7;
+  margin-left: -20px;
+  margin-right: 10px;
   height: 40px;
   background: var(--universal);
   border-radius: 50px;
-  margin-right: 15px;
-  width: 250px;
+  width: 100%;
   border-color: var(--universal);
   font-family: josefin sans;
 }
@@ -383,7 +473,7 @@ h5 {
   text-indent: 10px;
 }
 .subscribe button {
-  grid-column: 8/9;
+  grid-column: 7/8;
   background: none;
   border-style: none;
 }
@@ -392,7 +482,7 @@ h5 {
   cursor: pointer;
 }
 .footer-items {
-  margin: 20px auto 20px 60px;
+  margin: 20px 0 20px 30px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -423,8 +513,14 @@ footer p,
     font-size: 17px;
   }
   /* home styles */
+
   .small-screen-nav h1 {
     padding-left: 25px;
+  }
+  .nav-links {
+    right: 0;
+    width: 200px;
+    padding: 15px 0 0 130px;
   }
   .welcome-img {
     grid-column: 1/4;
@@ -486,7 +582,7 @@ footer p,
 
   .subscribe h5 {
     grid-column: 2/3;
-    margin: 0 40px;
+    margin: 0  40px 0 100px;
   }
   .subscribe input {
     width: 100%;
@@ -494,10 +590,10 @@ footer p,
   }
   .subscribe button {
     grid-column: 6/7;
-    margin-left: 30px;
+    margin-left: -40px;
   }
   .subscribe {
-    margin: 0 50px 0 10px;
+    margin: 20px 50px 0 10px;
   }
   .footer-items {
     margin: 20px 50px;
@@ -519,6 +615,9 @@ footer p,
   body {
     font-size: 18px;
   }
+  * {
+    scroll-behavior: smooth;
+  }
   .grid {
     max-width: 1000px;
     margin: 0 auto;
@@ -530,23 +629,24 @@ footer p,
     background-color: black;
     display: block;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 140px;
     margin-bottom: 50px;
-  }
-  main {
-    padding-top: 180px;
-  }
-  section {
-    scroll-margin-top: 100px;
-    scroll-margin-left: 30px;
   }
   .logo {
     display: flex;
     justify-content: center;
   }
-  .logo h1 {
-    margin: 20px 0;
+  .logo h1 a {
+    margin: 10px 0;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .logo h1 a:hover{
+    color: var(--secondary);
+    cursor: pointer;
+    transform: scale(1.1);
   }
   .links ul {
     display: flex;
@@ -558,7 +658,8 @@ footer p,
     text-transform: uppercase;
     padding-bottom: 5px;
   }
-  .links ul li a:hover {
+  .links ul li a:hover,
+  .links ul li a.active {
     text-decoration: none;
     border-bottom: 1px solid var(--primary);
   }
@@ -629,10 +730,17 @@ footer p,
     padding: 10px;
   }
   .style-input {
-    height: 131px;
+    height: 130px;
+  }
+  .style-input-footer{
+     margin-right: 100px;
   }
   .subscribe {
-    margin-left: 35px;
+    margin-left: 28px;
+    margin-top: 20px;
+  }
+  .subscribe button {
+    margin-left: -70px;
   }
   .footer-items {
     margin: 20px 50px;
@@ -699,5 +807,11 @@ footer p,
   .contact-btn {
     margin-top: 30px;
     padding: 10px;
+  }
+  .subscribe {
+    margin-left: 50px;
+  }
+  .subscribe button {
+    margin-left: -90px;
   }
 }
