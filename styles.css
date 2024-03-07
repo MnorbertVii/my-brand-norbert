@@ -6,6 +6,9 @@
 }
 
 /* resetting browser's default styles */
+body{
+  font-size: 15px;
+}
 body,
 p,
 a,
@@ -510,7 +513,7 @@ footer p,
 
 @media screen and (min-width: 700px) {
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
   /* home styles */
 
@@ -613,7 +616,7 @@ footer p,
 /* laptop small styles */
 @media screen and (min-width: 960px) {
   body {
-    font-size: 18px;
+    font-size: 17px;
   }
   * {
     scroll-behavior: smooth;
@@ -630,7 +633,7 @@ footer p,
     display: block;
     position: fixed;
     width: 100vw;
-    height: 140px;
+    height: 160px;
     margin-bottom: 50px;
   }
   .logo {
@@ -750,7 +753,7 @@ footer p,
 /* desktop styles */
 @media screen and (min-width: 1200px) {
   body {
-    font-size: 20px;
+    font-size: 18px;
   }
   .grid {
     max-width: 1200px;
