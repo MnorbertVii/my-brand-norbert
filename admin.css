@@ -1,0 +1,244 @@
+:root {
+  --back: #0e0e0e;
+  --universal: #ffffff;
+  --primary: #fca311;
+  --secondary: #dcc9aa;
+}
+
+/* resetting browser's default styles */
+* {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+nav ul li a {
+  font-size: 0.8em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
+}
+h4 {
+  font-size: 0.8em;
+}
+
+/* basic styles */
+body {
+  background: var(--back);
+  overflow-x: hidden;
+  color: var(--universal);
+}
+/* fonts */
+@font-face {
+  font-family: "lato bold";
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
+@font-face {
+  font-family: "lato";
+  src: url(assets/fonts/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: "lato small";
+  src: url(assets/fonts/Lato-Light.ttf);
+}
+@font-face {
+  font-family: "lato thin";
+  src: url(assets/fonts/Lato-Thin.ttf);
+}
+@font-face {
+  font-family: "josefin sans";
+  src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+/* Mobile-first styles */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  background-color: black;
+  padding-top: 40px;
+  height: 100%;
+  font-family: "lato";
+  text-transform: uppercase;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+nav ul li a:hover {
+  border-bottom: 1px solid var(--primary);
+}
+
+main {
+  margin-left: 100px;
+  padding: 20px;
+}
+
+#messages {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+.title {
+  grid-column: 1/10;
+  display: flex;
+  justify-content: center;
+}
+h2 {
+  font-family: josefin sans;
+  font-weight: 400;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--secondary);
+}
+.contents {
+  grid-column: 1/10;
+}
+.contents h3 {
+  font-family: 'lato bold';
+  margin-bottom: 20px;
+}
+.contents p {
+  font-family: "lato";
+  margin-bottom: 10px;
+}
+.contents h4 {
+  font-family: "lato small";
+  margin-bottom: 25px;
+}
+.header {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  padding: 15px;
+  font-family: 'lato bold';
+  color: var(--secondary);
+}
+td {
+  font-family: "lato";
+  padding: 10px;
+}
+label {
+  font-family: "lato";
+}
+input[type="text"],
+input[type="file"],
+textarea {
+  background: var(--back);
+  color: white;
+  outline: none;
+  border-style: none;
+  border: 1px solid var(--secondary);
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 5px;
+  background-color: var(--secondary);
+  color: black;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Select File";
+  background: var(--secondary);
+  border: 1px solid var(--secondary);
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8em;
+  color: #0e0e0e;
+}
+.custom-file-input:hover::before {
+  border-color: white;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+  nav {
+    width: 200px;
+    padding-left: 40px;
+  }
+  main {
+    margin-left: 220px;
+  }
+}
+.blog-img {
+  max-width: 100px;
+  max-height: 100px;
+}
+form {
+  width: 80%;
+}
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 17px;
+  }
+  .blog-img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  td a {
+    display: inline;
+  }
+  .action-icons img {
+    width: 12%;
+    white-space: nowrap;
+  }
+  form {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1200px){
+	body{
+		font-size: 18px;
+	}
+	.title,.header{
+		justify-content: flex-start;
+	}
+	main {
+		margin-left: 300px;
+	  }
+	form{
+		width: 50%;
+	}
+}
