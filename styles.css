@@ -45,6 +45,10 @@ textarea {
 }
 /* fonts */
 @font-face {
+  font-family: "lato bold";
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
+@font-face {
   font-family: "lato";
   src: url(assets/fonts/Lato-Regular.ttf);
 }
@@ -116,7 +120,6 @@ footer p {
 .nav-links svg {
   fill: white;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 
 .menu-btn svg:hover,
@@ -194,7 +197,7 @@ main {
   padding-top: 150px;
 }
 section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 110px;
   scroll-margin-left: 30px;
 }
 
@@ -299,8 +302,7 @@ section {
 .others h4,
 .tools h4,
 .database h4 {
-  font-family: "lato small";
-  font-weight: 100;
+  font-family: 'lato thin';
 }
 /* project styles */
 #projects {
@@ -322,7 +324,7 @@ section {
 .title {
   display: flex;
   justify-content: center;
-  font-family: "lato small";
+  font-family: "lato bold";
   font-weight: 100;
 }
 .title a {
@@ -331,7 +333,7 @@ section {
 }
 .first-project p {
   padding-bottom: 50px;
-  font-family: "lato thin";
+  font-family: "lato small";
   line-height: 25px;
   border-bottom: 1px solid var(--secondary);
 }
@@ -360,7 +362,7 @@ section {
   gap: 20px;
 }
 .first-blog h4 {
-  font-family: lato;
+  font-family: 'lato bold';
   font-weight: 200;
 }
 
@@ -409,7 +411,7 @@ section {
   height: 100px;
 }
 .contact-btn {
-  font-family: "lato small";
+  font-family: "lato";
   padding: 10px 70px;
   background: var(--secondary);
   border-style: none;
@@ -450,6 +452,7 @@ p {
   grid-column: 1/9;
 }
 .subscribe {
+  text-transform: uppercase;
   margin-top: 20px;
   font-family: josefin sans;
   justify-content: center;
@@ -471,6 +474,9 @@ h5 {
   border-color: var(--universal);
   font-family: josefin sans;
 }
+.style-input-footer {
+  color: #000000;
+}
 .style-input-footer,
 .style-input-footer::placeholder {
   text-indent: 10px;
@@ -479,9 +485,10 @@ h5 {
   grid-column: 7/8;
   background: none;
   border-style: none;
+  transition: all 0.3s ease;
 }
 .subscribe button:hover {
-  box-shadow: 1px 2px 3px rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
   cursor: pointer;
 }
 .footer-items {
@@ -494,20 +501,19 @@ h5 {
 .footer-items li {
   flex-basis: calc(30% - 20px);
   margin-bottom: 20px;
-}
-.footer-items li:hover {
-  border-bottom: 1px solid var(--universal);
-  padding: 5px 10px;
+  text-transform: uppercase;
 }
 footer p,
 .footer-items li a {
-  font-family: josefin sans;
+  font-family: 'lato small';
   font-weight: 200;
+  font-size: 0.8em;
   text-align: center;
   color: var(--universal);
 }
-.style-input-footer {
-  color: #000000;
+.footer-items li a:hover {
+  color: var(--secondary);
+  text-shadow: 1px 1px 2px #fff;
 }
 /* tablet styles */
 
@@ -622,7 +628,7 @@ footer p,
     scroll-behavior: smooth;
   }
   .grid {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
   .small-screen-nav {
@@ -633,7 +639,7 @@ footer p,
     display: block;
     position: fixed;
     width: 100vw;
-    height: 160px;
+    height: 150px;
     margin-bottom: 50px;
   }
   .logo {
@@ -641,7 +647,7 @@ footer p,
     justify-content: center;
   }
   .logo h1 a {
-    margin: 10px 0;
+    margin: 5px 0;
     color: var(--primary);
     transition: all 0.3s ease;
     display: inline-block;
@@ -649,7 +655,7 @@ footer p,
   .logo h1 a:hover{
     color: var(--secondary);
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   .links ul {
     display: flex;
@@ -667,7 +673,7 @@ footer p,
     border-bottom: 1px solid var(--primary);
   }
   #home {
-    margin: auto 70px;
+    margin: auto;
   }
   .welcome-img {
     width: 250px;
@@ -710,23 +716,26 @@ footer p,
   .comments img {
     margin-left: 0;
   }
+  #contact{
+    margin: auto;
+  }
   #contact form {
-    width: 100%;
     max-width: 100%;
   }
   .contact-form {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    padding: 0 0 0 50px;
   }
   .left-side {
     grid-column: 2/5;
+    
   }
   .contact-form textarea {
-    grid-column: 6/9;
+    margin-left: 50px;
+    grid-column: 7/10;
   }
   .contact-form button {
-    grid-column: 4/7;
+    grid-column: 5/7;
   }
   .contact-btn {
     margin-top: 30px;
@@ -739,7 +748,7 @@ footer p,
      margin-right: 100px;
   }
   .subscribe {
-    margin-left: 28px;
+    margin-left: 10px;
     margin-top: 20px;
   }
   .subscribe button {
@@ -760,7 +769,7 @@ footer p,
     justify-content: center;
   }
   .welcome-img {
-    width: 250px;
+    width: 270px;
     height: 270px;
     grid-column: 2/4;
   }
@@ -795,13 +804,13 @@ footer p,
   .contact-form {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding: 0 0 0 50px;
+    padding: 0 0 0 100px;
   }
   .left-side {
-    grid-column: 2/4;
+    grid-column: 1/4;
   }
   .contact-form textarea {
-    grid-column: 5/7;
+    grid-column: 5/8;
   }
   .contact-form button {
     margin-left: -100px;
@@ -815,6 +824,6 @@ footer p,
     margin-left: 50px;
   }
   .subscribe button {
-    margin-left: -90px;
+    margin-left: -100px;
   }
 }
