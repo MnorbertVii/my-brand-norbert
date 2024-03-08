@@ -37,6 +37,10 @@ body {
 }
 /* fonts */
 @font-face {
+  font-family: "lato bold";
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
+@font-face {
   font-family: "lato";
   src: url(assets/fonts/Lato-Regular.ttf);
 }
@@ -63,7 +67,7 @@ nav {
   background-color: black;
   padding-top: 40px;
   height: 100%;
-  font-family: "lato small";
+  font-family: "lato";
   text-transform: uppercase;
 }
 
@@ -104,15 +108,15 @@ h2 {
   grid-column: 1/10;
 }
 .contents h3 {
-  font-family: lato;
+  font-family: 'lato bold';
   margin-bottom: 20px;
 }
 .contents p {
-  font-family: "lato small";
+  font-family: "lato";
   margin-bottom: 10px;
 }
 .contents h4 {
-  font-family: "lato thin";
+  font-family: "lato small";
   margin-bottom: 25px;
 }
 .header {
@@ -125,15 +129,15 @@ table {
 }
 th {
   padding: 15px;
-  font-family: lato;
+  font-family: 'lato bold';
   color: var(--secondary);
 }
 td {
-  font-family: "lato small";
+  font-family: "lato";
   padding: 10px;
 }
 label {
-  font-family: "lato small";
+  font-family: "lato";
 }
 input[type="text"],
 input[type="file"],
@@ -180,7 +184,7 @@ input[type="submit"]:hover {
   color: #0e0e0e;
 }
 .custom-file-input:hover::before {
-  border-color: black;
+  border-color: white;
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
