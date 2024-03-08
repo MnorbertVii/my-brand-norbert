@@ -129,6 +129,7 @@ form button {
   font-family: "lato bold";
   border-radius: 40px;
   font-size: 0.7em;
+  color: black;
 }
 form button:hover {
   background: var(--universal);

@@ -237,6 +237,7 @@ section {
 }
 .resume-btn {
   font-family: "lato bold";
+  color: black;
   font-size: 1em;
   margin: 80px 35px;
   padding: 8px 50px;
@@ -406,6 +407,7 @@ section {
 }
 .contact-btn {
   font-family: "lato bold";
+  color: black;
   font-size: 0.8em;
   padding: 10px 70px;
   background: var(--secondary);
@@ -680,7 +682,7 @@ footer p,
   }
 
   /* home styles */
-  
+
   #home {
     margin: auto;
   }
