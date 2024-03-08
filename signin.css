@@ -5,12 +5,12 @@
   --secondary: #dcc9aa;
 }
 /* resetting browser's default styles */
-body{
+body {
   font-size: 15px;
 }
 body,
 p,
-a{
+a {
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -42,7 +42,10 @@ p {
 label {
   font-size: 1em;
   margin-bottom: 15px;
-  font-family: 'lato small';
+  font-family: "lato";
+}
+form button {
+  font-size: 0.8em;
 }
 /* fonts */
 @font-face {
@@ -69,27 +72,27 @@ label {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  margin-bottom: 150px;
 }
-@keyframes slideInFromLeft{
-  0%{
+@keyframes slideInFromLeft {
+  0% {
     transform: translateX(-100%);
   }
-  100%{
+  100% {
     transfrom: translateX(0);
   }
 }
 form {
-  width: 70%;
+  width: 60%;
   max-width: 400px;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   animation: 0.5s ease-out 0s 1 slideInFromLeft;
 }
 .container h2 {
-  margin-top: 80px;
+  margin-top: 180px;
   font-family: josefin sans;
   font-weight: 500;
 }
@@ -98,7 +101,6 @@ form {
 }
 .email-input,
 .password-input {
-
   display: flex;
   flex-direction: column;
 }
@@ -113,34 +115,34 @@ form {
   color: var(--universal);
 }
 .password-input a {
-font-family: 'lato small' ;
-font-size: 0.7em;
+  font-family: "lato";
+  font-size: 0.7em;
   align-self: flex-end;
   color: var(--primary);
 }
-form button{
-	width: 100%;
-	border-style: none;
-	margin: 50px auto ;
-	padding: 10px;
-	background: var(--secondary);
-	font-family: lato;
-	border-radius: 40px;
+form button {
+  width: 100%;
+  border-style: none;
+  margin: 50px auto;
+  padding: 10px;
+  background: var(--secondary);
+  font-family: "lato bold";
+  border-radius: 40px;
 }
-form button:hover{
-	background: var(--universal);
-	cursor:pointer;
+form button:hover {
+  background: var(--universal);
+  cursor: pointer;
 }
-form p a{
-	text-decoration: underline;
-	color:var(--universal);
+form p a {
+  text-decoration: underline;
+  color: var(--universal);
 }
-form p a:hover{
-	color: var(--secondary);
+form p a:hover {
+  color: var(--secondary);
 }
-form p{
-	font-family: 'lato small';
-	text-align: center;
+form p {
+  font-family: "lato";
+  text-align: center;
 }
 
 /* tablet screens */
@@ -157,10 +159,9 @@ form p{
   body {
     font-size: 17px;
   }
-  .container h2{
+  .container h2 {
     margin-top: 180px;
   }
-
 }
 
 /* desktop screens */

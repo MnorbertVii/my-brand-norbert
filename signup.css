@@ -1,173 +1,174 @@
 :root {
-	--back: #0e0e0e;
-	--universal: #ffffff;
-	--primary: #fca311;
-	--secondary: #dcc9aa;
-  }
-  /* resetting browser's default styles */
-  body{
-	font-size: 15px;
-  }
-  body,
-  p,
-  a{
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-  }
-  /* basic styles */
-  body {
-	background: var(--back);
-	overflow-x: hidden;
-	color: var(--universal);
-  }
-  input,
-  textarea {
-	background: none;
-	border: 0.5px solid var(--secondary);
-	border-radius: 10px;
-	display: inline-block;
-	outline: none;
-	font-family: "lato small";
-  }
-  h2 {
-	font-size: 2em;
-  }
-  p {
-	font-size: 0.8em;
-  }
-  label {
-	font-size: 1em;
-	margin-bottom: 15px;
-	font-family: 'lato small';
-  }
-  .style-input:focus {
-	box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
-  }
-  /* fonts */
-  @font-face {
-	font-family: "lato";
-	src: url(assets/fonts/Lato-Regular.ttf);
-  }
-  @font-face {
-	font-family: "lato small";
-	src: url(assets/fonts/Lato-Light.ttf);
-  }
-  @font-face {
-	font-family: "lato thin";
-	src: url(assets/fonts/Lato-Thin.ttf);
-  }
-  @font-face {
-	font-family: "josefin sans";
-	src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
-  }
-
-  /* small screen styles */
-  
-  .container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-  }
-  @keyframes slideInFromLeft{
-	0%{
-	  transform: translateX(100%);
-	}
-	100%{
-	  transfrom: translateX(0);
-	}
-  }
-  form {
-	width: 70%;
-	max-width: 400px;
-	margin: 20px auto;
-	padding: 60px 20px 0 20px;
+  --back: #0e0e0e;
+  --universal: #ffffff;
+  --primary: #fca311;
+  --secondary: #dcc9aa;
+}
+/* resetting browser's default styles */
+body {
+  font-size: 15px;
+}
+body,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+/* basic styles */
+body {
+  background: var(--back);
+  overflow-x: hidden;
+  color: var(--universal);
+}
+input,
+textarea {
+  background: none;
+  border: 0.5px solid var(--secondary);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  display: inline-block;
+  outline: none;
+  font-family: "lato small";
+}
+h2 {
+  font-size: 2em;
+}
+p {
+  font-size: 0.8em;
+}
+label {
+  font-size: 1em;
+  margin-bottom: 15px;
+  font-family: "lato";
+}
+.style-input:focus {
+  box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
+}
+/* fonts */
+@font-face {
+  font-family: "lato";
+  src: url(assets/fonts/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: "lato small";
+  src: url(assets/fonts/Lato-Light.ttf);
+}
+@font-face {
+  font-family: "lato thin";
+  src: url(assets/fonts/Lato-Thin.ttf);
+}
+@font-face {
+  font-family: "josefin sans";
+  src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+/* small screen styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-bottom: 150px;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transfrom: translateX(0);
+  }
+}
+form {
+  width: 60%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 60px 20px 0 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
+.container h2 {
+  margin-top: 150px;
+  font-family: josefin sans;
+  font-weight: 500;
+}
+.in {
+  color: var(--primary);
+}
+.container p {
+  font-family: lato;
+  margin-bottom: 30px;
+}
+.name-input,
+.email-input,
+.password-input {
+  display: flex;
+  flex-direction: column;
+}
+#email,
+#name {
+  margin-bottom: 30px;
+  height: 30px;
+  color: var(--universal);
+  text-indent: 10px;
+}
+#key {
+  text-indent: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  color: var(--universal);
+}
+form button {
+  width: 100%;
+  border-style: none;
+  margin: 50px auto;
+  padding: 10px;
+  background: var(--secondary);
+  font-family: "lato bold";
+  border-radius: 40px;
+  font-size: 0.7em;
+}
+form button:hover {
+  background: var(--universal);
+  cursor: pointer;
+}
+p a {
+  text-decoration: underline;
+  color: var(--universal);
+}
+p a:hover {
+  color: var(--secondary);
+}
+form p {
+  font-family: "lato";
+  text-align: center;
+}
+
+/* tablet screens */
+
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* laptop screens */
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 17px;
   }
   .container h2 {
-	font-family: josefin sans;
-	font-weight: 500;
+    margin-top: 180px;
   }
-  .in {
-	color: var(--primary);
+}
+
+/* desktop screens */
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 18px;
   }
- .container p{
-	font-family: lato;
-	margin-bottom: 30px;
-  }
-  .name-input,.email-input,
-  .password-input {
-  
-	display: flex;
-	flex-direction: column;
-  }
-  #email , #name{
-	margin-bottom: 30px;
-	height: 30px;
-	color: var(--universal);
-	text-indent: 10px;
-  }
-  #key {
-	text-indent: 10px;
-	margin-bottom: 10px;
-	height: 30px;
-	color: var(--universal);
-  }
-  form button{
-	  width: 100%;
-	  border-style: none;
-	  margin: 50px auto ;
-	  padding: 10px 130px;
-	  background: var(--secondary);
-	  font-family: lato;
-	  border-radius: 40px;
-	  font-size: 0.7em;
-  }
-  form button:hover{
-	  background: var(--universal);
-	  cursor:pointer;
-  }
-  p a{
-	  text-decoration: underline;
-	  color:var(--universal);
-  }
-  p a:hover{
-	  color: var(--secondary);
-  }
-  form p{
-	  font-family: 'lato small';
-	  text-align: center;
-  }
-  
-  /* tablet screens */
-  
-  @media screen and (min-width: 700px) {
-	body {
-	  font-size: 16px;
-	}
-  }
-  
-  /* laptop screens */
-  
-  @media screen and (min-width: 960px) {
-	body {
-	  font-size: 17px;
-	}
-	.container h2{
-		margin-top: 180px;
-	}
-  }
-  
-  /* desktop screens */
-  
-  @media screen and (min-width: 1200px) {
-	body {
-	  font-size: 18px;
-	}
-  }
-  
+}

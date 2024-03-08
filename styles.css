@@ -6,7 +6,7 @@
 }
 
 /* resetting browser's default styles */
-body{
+body {
   font-size: 15px;
 }
 body,
@@ -152,7 +152,7 @@ svg {
   color: white;
   width: 100px;
   text-transform: uppercase;
-  font-family: "lato thin";
+  font-family: "lato";
   padding: 10px;
 }
 .nav-links a:hover {
@@ -202,7 +202,7 @@ section {
 }
 
 #home {
-  padding: 10px auto;
+  padding: auto;
 }
 .welcome-img {
   grid-column: 1/9;
@@ -210,7 +210,7 @@ section {
   height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  margin-left: 45px;
+  margin-left: 35px;
 }
 .welcome-img img {
   width: 100%;
@@ -236,10 +236,10 @@ section {
   color: var(--secondary);
 }
 .resume-btn {
-  font-family: lato;
+  font-family: "lato bold";
   font-size: 1em;
   margin: 80px 35px;
-  padding: 15px 100px;
+  padding: 8px 50px;
   border-radius: 10px;
   border-style: none;
   background: var(--secondary);
@@ -280,18 +280,7 @@ section {
   grid-column: 1/9;
   margin-bottom: 20px;
   border-radius: 15px;
-  font-family: "lato small";
-}
-@keyframes slideInFromLeft{
-	0%{
-	  transform: translateX(-100%);
-	}
-	100%{
-	  transfrom: translateX(0);
-	}
-  }
-.reading{
-  animation: 0.5s ease-out 0s 1 slideInFromLeft;
+  font-family: frank;
 }
 .header {
   text-align: center;
@@ -302,7 +291,8 @@ section {
 .others h4,
 .tools h4,
 .database h4 {
-  font-family: 'lato thin';
+  font-family: frank;
+  font-weight: 300;
 }
 /* project styles */
 #projects {
@@ -333,8 +323,8 @@ section {
 }
 .first-project p {
   padding-bottom: 50px;
-  font-family: "lato small";
-  line-height: 25px;
+  font-family: frank;
+  line-height: 1.5em;
   border-bottom: 1px solid var(--secondary);
 }
 .style-link {
@@ -362,13 +352,13 @@ section {
   gap: 20px;
 }
 .first-blog h4 {
-  font-family: 'lato bold';
+  font-family: "lato bold";
   font-weight: 200;
 }
 
 .first-blog p {
   margin-bottom: 20px;
-  font-family: "lato small";
+  font-family: frank;
 }
 
 .likes-comments,
@@ -411,7 +401,8 @@ section {
   height: 100px;
 }
 .contact-btn {
-  font-family: "lato";
+  font-family: "lato bold";
+  font-size: 0.8em;
   padding: 10px 70px;
   background: var(--secondary);
   border-style: none;
@@ -505,8 +496,7 @@ h5 {
 }
 footer p,
 .footer-items li a {
-  font-family: 'lato small';
-  font-weight: 200;
+  font-family: frank;
   font-size: 0.8em;
   text-align: center;
   color: var(--universal);
@@ -539,15 +529,17 @@ footer p,
   }
   .welcome-texts {
     line-height: 2.5em;
-    grid-column: 4/9;
-    margin-left: 60px;
+    grid-column: 5/9;
+    margin-left: 0;
   }
   .welcome-texts p {
     font-size: 0.9em;
   }
+  #home a {
+    grid-column: 5/7;
+    color: black;
+  }
   .resume-btn {
-    width: 45%;
-    grid-column: 3/9;
     margin: 30px auto;
     padding: 8px 90px;
   }
@@ -591,7 +583,7 @@ footer p,
 
   .subscribe h5 {
     grid-column: 2/3;
-    margin: 0  40px 0 100px;
+    margin: 0 40px 0 100px;
   }
   .subscribe input {
     width: 100%;
@@ -652,7 +644,7 @@ footer p,
     transition: all 0.3s ease;
     display: inline-block;
   }
-  .logo h1 a:hover{
+  .logo h1 a:hover {
     color: var(--secondary);
     cursor: pointer;
     transform: scale(1.2);
@@ -716,7 +708,7 @@ footer p,
   .comments img {
     margin-left: 0;
   }
-  #contact{
+  #contact {
     margin: auto;
   }
   #contact form {
@@ -728,7 +720,6 @@ footer p,
   }
   .left-side {
     grid-column: 2/5;
-    
   }
   .contact-form textarea {
     margin-left: 50px;
@@ -744,8 +735,8 @@ footer p,
   .style-input {
     height: 130px;
   }
-  .style-input-footer{
-     margin-right: 100px;
+  .style-input-footer {
+    margin-right: 100px;
   }
   .subscribe {
     margin-left: 10px;
@@ -773,15 +764,6 @@ footer p,
     height: 270px;
     grid-column: 2/4;
   }
-  .welcome-texts {
-    grid-column: 4/9;
-    margin-left: 120px;
-  }
-  .resume-btn {
-    grid-column: 3/7;
-    margin-left: 320px;
-  }
-
   #projects {
     margin: auto 200px;
   }
