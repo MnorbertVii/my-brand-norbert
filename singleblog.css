@@ -75,6 +75,10 @@ p {
   font-family: "frank";
   src: url(assets/fonts/FrankRuhlLibre-VariableFont_wght.ttf);
 }
+@font-face {
+  font-family: "lato bold";
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
 svg {
   margin: 50px;
   transition: all 0.3s ease;
@@ -125,7 +129,7 @@ textarea {
   margin: 30px auto;
   padding: 7px 100px 7px 90px;
   background: var(--secondary);
-  font-family: lato;
+  font-family: 'lato bold' ;
   border-radius: 40px;
   font-size: 0.8em;
   color: black;
