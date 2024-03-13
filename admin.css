@@ -45,6 +45,10 @@ body {
   src: url(assets/fonts/Lato-Regular.ttf);
 }
 @font-face {
+  font-family: "lora";
+  src: url(assets/fonts/Lora-VariableFont_wght.ttf);
+}
+@font-face {
   font-family: "lato small";
   src: url(assets/fonts/Lato-Light.ttf);
 }
@@ -108,11 +112,11 @@ h2 {
   grid-column: 1/10;
 }
 .contents h3 {
-  font-family: 'lato bold';
+  font-family: 'lora';
   margin-bottom: 20px;
 }
 .contents p {
-  font-family: "lato";
+  font-family: lora;
   margin-bottom: 10px;
 }
 .contents h4 {
@@ -133,11 +137,11 @@ th {
   color: var(--secondary);
 }
 td {
-  font-family: "lato";
+  font-family: "lora";
   padding: 10px;
 }
 label {
-  font-family: "lato";
+  font-family: "lora";
 }
 input[type="text"],
 input[type="file"],
@@ -161,7 +165,7 @@ input[type="submit"] {
   color: black;
   border-style: none;
   border-radius: 5px;
-  cursor: pointer;
+  font-family: 'lato bold';
 }
 input[type="submit"]:hover {
   background: white;

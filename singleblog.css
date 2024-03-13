@@ -63,7 +63,10 @@ p {
   font-family: "lora";
   src: url(assets/fonts/Lora-VariableFont_wght.ttf);
 }
-
+@font-face {
+  font-family: "poppins";
+  src: url(assets/fonts/Poppins-Medium.ttf);
+}
 @font-face {
   font-family: "lato thin";
   src: url(assets/fonts/Lato-Thin.ttf);
@@ -162,7 +165,6 @@ textarea {
   }
   .container p {
     grid-column: 2/8;
-    font-family: "lato small";
   }
   .container img {
     grid-column: 3/7;
@@ -182,21 +184,15 @@ textarea {
     font-size: 17px;
   }
   svg {
-    margin: 70px 0 20px 120px;
+    margin-left: 120px;
   }
   .container img {
     width: 400px;
     height: 450px;
     margin-left: 35px;
   }
-  .container p {
-    grid-column: 2/8;
-  }
   form {
     width: 30%;
-  }
-  .comments p {
-    grid-column: 1/9;
   }
 }
 
@@ -207,7 +203,7 @@ textarea {
     font-size: 18px;
   }
   svg {
-    margin: 70px 0 20px 200px;
+    margin-left: 200px;
   }
   .container img {
     width: 500px;
