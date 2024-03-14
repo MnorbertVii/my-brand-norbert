@@ -24,7 +24,7 @@ body {
 input,
 textarea {
   background: none;
-  border: 0.5px solid var(--secondary);
+  border: 1px solid var(--secondary);
   border-radius: 10px;
   display: inline-block;
   outline: none;
@@ -39,12 +39,16 @@ p {
 label {
   font-size: 1em;
   margin-bottom: 15px;
-  font-family: "lato";
+  font-family: "lora";
 }
 .style-input:focus {
   box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
 }
 /* fonts */
+@font-face {
+  font-family: "lato bold";
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
 @font-face {
   font-family: "lato";
   src: url(assets/fonts/Lato-Regular.ttf);
@@ -60,6 +64,10 @@ label {
 @font-face {
   font-family: "josefin sans";
   src: url(assets/fonts/JosefinSans-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "lora";
+  src: url(assets/fonts/Lora-VariableFont_wght.ttf);
 }
 
 /* small screen styles */
@@ -77,7 +85,7 @@ label {
     transform: translateX(100%);
   }
   100% {
-    transfrom: translateX(0);
+    transform: translateX(0);
   }
 }
 form {
@@ -98,15 +106,28 @@ form {
   color: var(--primary);
 }
 .container p {
-  font-family: lato;
+  font-family: lora;
   margin-bottom: 30px;
 }
-.name-input,
-.email-input,
-.password-input {
+.input {
   display: flex;
   flex-direction: column;
 }
+
+.input.success input{
+  border: 1px solid #09c372;
+} 
+.input.err input{
+  border: 1px solid red;
+} 
+
+.input .err{
+  color: red; 
+  margin: -15px 0 20px 0;
+  font-family: 'lato small';
+  font-size: 0.8em;
+} 
+
 #email,
 #name {
   margin-bottom: 30px;
@@ -116,7 +137,7 @@ form {
 }
 #key {
   text-indent: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   height: 30px;
   color: var(--universal);
 }
@@ -146,6 +167,17 @@ form p {
   font-family: "lato";
   text-align: center;
 }
+
+/* .ok{
+  margin: 10px;
+  background: var(--primary);
+  color: black;
+  font-family: lora;
+  border-radius: 10px;
+  padding:20px;
+  width: 200px;
+  display: none;
+} */
 
 /* tablet screens */
 
