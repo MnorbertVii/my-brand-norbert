@@ -171,12 +171,15 @@ input[type="submit"]:hover {
   background: white;
   cursor: pointer;
 }
-
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: "Select File";
+  content: "Select photo";
   background: var(--secondary);
   border: 1px solid var(--secondary);
   border-radius: 3px;

@@ -30,6 +30,11 @@ textarea {
   outline: none;
   font-family: "lato small";
 }
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 h2 {
   font-size: 2em;
 }
@@ -44,6 +49,7 @@ label {
 .style-input:focus {
   box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
 }
+
 /* fonts */
 @font-face {
   font-family: "lato bold";
@@ -71,6 +77,20 @@ label {
 }
 
 /* small screen styles */
+.alert {
+  position: absolute;
+  font-family: josefin sans;
+  font-size: 0.8em;
+  top: 235px;
+  padding: 10px;
+  background-color: var(--primary);
+  color: black;
+  text-align: center;
+  z-index: 999;
+  width: 200px;
+  border-radius: 15px;
+  display: none;
+}
 
 .container {
   display: flex;
@@ -113,12 +133,13 @@ form {
   display: flex;
   flex-direction: column;
 }
-
-.input.success input{
-  border: 1px solid #09c372;
-} 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
 .input.err input{
-  border: 1px solid red;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 } 
 
 .input .err{
@@ -168,17 +189,6 @@ form p {
   text-align: center;
 }
 
-/* .ok{
-  margin: 10px;
-  background: var(--primary);
-  color: black;
-  font-family: lora;
-  border-radius: 10px;
-  padding:20px;
-  width: 200px;
-  display: none;
-} */
-
 /* tablet screens */
 
 @media screen and (min-width: 700px) {
@@ -193,6 +203,9 @@ form p {
   body {
     font-size: 17px;
   }
+  .alert{
+    top: 270px;
+  }
   .container h2 {
     margin-top: 180px;
   }
@@ -203,5 +216,8 @@ form p {
 @media screen and (min-width: 1200px) {
   body {
     font-size: 18px;
+  }
+  .alert{
+    top: 275px;
   }
 }

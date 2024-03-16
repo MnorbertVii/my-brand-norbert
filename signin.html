@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="signin.css" />
     <script defer src="main.js"></script>
+    <script defer src="./Js/user/signin.js"></script>
     <title>Sign In</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
           <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#blogs">Blogs</a></li>
           <li><a href="index.html#contact">Contact me</a></li>
-          <li><a href="index.htmlsignin.html">Sign in</a></li>
+          <li><a href="signin.html">Sign in</a></li>
         </ul>
       </div>
     </nav>
@@ -64,18 +65,22 @@
     </nav>
 
     <div class="container">
+      <div class="alert">
+      </div>
       <h2>Sign <span class="in">In</span></h2>
-      <form>
-        <div class="email-input">
+      <form name="signInForm">
+        <div class="input">
           <label for="email">Email</label>
           <input type="text" id="email" class="style-input" />
+          <div class="err"></div>
         </div>
-        <div class="password-input">
+        <div class="input">
           <label for="key">Password</label>
           <input type="password" id="key" class="style-input" />
           <a href="#" class="forgot-password">forgot password?</a>
+          <div class="err"></div>
         </div>
-        <button class="signin-btn">Log in</button>
+        <button type="submit" class="signin-btn">Log in</button>
         <p>
           <a href="signup.html" class="sign-up">Sign up </a> if you don't have
           an account

@@ -37,6 +37,10 @@ textarea {
   outline: none;
   font-family: "lato small";
 }
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 .style-input {
   color: var(--universal);
 }
@@ -648,7 +652,7 @@ footer p,
     display: block;
     position: fixed;
     width: 100vw;
-    height: 150px;
+    height: 130px;
     margin-bottom: 50px;
   }
   .logo {

@@ -24,8 +24,6 @@ window.onscroll = () => {
 	});
 };
 
-
-
 // show and hide side bar functions
 function showMenubar() {
 	const menubar = document.querySelector(".nav-links");
@@ -35,3 +33,38 @@ function showMenubar() {
 	const menubar = document.querySelector(".nav-links");
 	menubar.style.display = "none";
   }
+
+//
+document.addEventListener('DOMContentLoaded', (e) => {
+	let authenticatedUsers = JSON.parse(localStorage.getItem('authenticatedUsers')) || [];
+	console.log(authenticatedUsers);
+	if(authenticatedUsers.length > 0){
+		let signInLi = document.querySelector('#signInLi');
+		let signInLi2 = document.querySelector('#signInLi2');
+
+		if(signInLi || signInLi2){
+			signInLi.textContent = 'Sign out';
+			signInLi.href = 'index.html';
+			signInLi2.textContent = 'Sign out';
+			signInLi2.href = 'index.html';
+		}
+		if(signInLi2 || signInLi){
+
+			signInLi2.addEventListener('click', () => {
+				if(signInLi2.textContent === 'Sign out'){
+					localStorage.removeItem('authenticatedUsers');
+					signInLi2.textContent = 'Sign in';
+					window.location.href = 'index.html';
+				}
+			})
+			signInLi.addEventListener('click', () => {
+				if(signInLi.textContent === 'Sign out'){
+					localStorage.removeItem('authenticatedUsers');
+					signInLi.textContent = 'Sign in';
+					window.location.href = 'index.html';
+				}
+			})
+
+		}
+	}
+});

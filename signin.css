@@ -30,6 +30,10 @@ textarea {
   outline: none;
   font-family: "lato small";
 }
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 .style-input:focus {
   box-shadow: 0 0 5px rgba(194, 215, 218, 0.5);
 }
@@ -74,12 +78,28 @@ form button {
   width: 100vw;
   margin-bottom: 150px;
 }
+
+.alert {
+  position: absolute;
+  font-family: josefin sans;
+  font-size: 1em;
+  top: 235px;
+  padding: 15px;
+  background-color: var(--primary);
+  color: black;
+  text-align: center;
+  z-index: 999;
+  width: 200px;
+  border-radius: 15px;
+  display: none;
+}
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
   }
   100% {
-    transfrom: translateX(0);
+    transform: translateX(0);
   }
 }
 form {
@@ -93,14 +113,14 @@ form {
 }
 .container h2 {
   margin-top: 180px;
+  margin-bottom: 80px;
   font-family: josefin sans;
   font-weight: 500;
 }
 .in {
   color: var(--primary);
 }
-.email-input,
-.password-input {
+.input {
   display: flex;
   flex-direction: column;
 }
@@ -114,12 +134,26 @@ form {
   height: 40px;
   color: var(--universal);
 }
-.password-input a {
+.input a {
   font-family: "lato";
   font-size: 0.7em;
   align-self: flex-end;
   color: var(--primary);
 }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+.input.err input{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+.input .err{
+  color: red; 
+  margin: -15px 0 20px 0;
+  font-family: 'lato small';
+  font-size: 0.8em;
+} 
 form button {
   width: 100%;
   border-style: none;
