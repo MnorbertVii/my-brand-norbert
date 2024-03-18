@@ -394,7 +394,7 @@ section {
   width: 80%;
   max-width: 400px;
   margin: 20px auto;
-  text-align: center;
+  /* text-align: center; */
 }
 #contact input,
 #contact textarea {
@@ -408,6 +408,26 @@ section {
 }
 .style-input {
   height: 100px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+.input.err input, .input.err textarea{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+} 
+
+.input .err{
+  color: red; 
+  margin: -15px 0 20px 0;
+  font-family: 'lato small';
+  font-size: 0.8em;
+} 
+.btn-container{
+  display: flex;
+  justify-content: center;
 }
 .contact-btn {
   font-family: "lato bold";
@@ -754,18 +774,23 @@ footer p,
     grid-template-columns: repeat(10, 1fr);
   }
   .left-side {
-    grid-column: 2/5;
+    grid-column: 1/5;
   }
-  .contact-form textarea {
-    margin-left: 50px;
-    grid-column: 7/10;
+.right-side{
+    grid-column: 7/11;
   }
-  .contact-form button {
-    grid-column: 5/7;
+  #contact textarea {
+    height: 135px;
+  }
+  .btn-container{
+    grid-column: 4/8;
+  }
+  .btn-container button{
+    width: 100%;
+    margin-left: 10px;
   }
   .contact-btn {
     margin-top: 30px;
-    padding: 10px;
   }
   .style-input {
     height: 130px;
@@ -841,18 +866,16 @@ footer p,
   .left-side {
     grid-column: 1/4;
   }
-  .contact-form textarea {
+  .right-side{
     grid-column: 5/8;
   }
-  .contact-form button {
-    margin-left: -100px;
-    grid-column: 4/6;
+  .btn-container{
+    grid-column: 3/6;
   }
-  .contact-btn {
-    margin-top: 30px;
-    padding: 10px;
+  .btn-container button{
+    width: 100%;
+    margin-left: 20px;
   }
-
 /* footer  */
 
   .subscribe {

@@ -1,51 +1,15 @@
-const form = document.forms['signInForm'];
+import { invalid, valid, isEmailValid, alertDisplay } from "./signup.js";
+
+const form1 = document.forms['signInForm'];
 const userEmail = document.getElementById('email');
 const userPassword = document.getElementById('key');
-const alert = document.getElementsByClassName('alert');
 
-form.addEventListener('submit', e => {
+form1.addEventListener('submit', e => {
 	e.preventDefault();
 
 	validInputs();
 	
 })
-
-
-function invalid (element, message){
-	const input = element.parentElement;
-	const error = input.querySelector('.err');
-
-	error.innerText = message;
-	input.classList.add('err');
-	if(message){
-		input.classList.add('.err');
-		input.addEventListener('animationend', () => {
-			input.classList.remove('err');
-		},{once:true});
-	}
-}
-
-function isEmailValid(email){
-	const EmailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return EmailRegex.test(String(email).toLowerCase());
-}
-
-function valid (element){
-	const input = element.parentElement;
-	const error = input.querySelector('.err');
-
-	error.innerText = '';
-	input.classList.remove('err');
-}
-
-function alertDisplay(message){
-	var alert =document.getElementsByClassName("alert");
-	alert[0].innerHTML = message;
-	alert[0].style.display = "block";
-	setTimeout(function(){
-		alert[0].style.display = 'none';
-	}, 3000)
-}
 
 function validInputs (){
 	const EmailValue = userEmail.value.trim();
@@ -85,11 +49,19 @@ function validInputs (){
 				return;
 			}
 			if (user && user.password === password){
-				window.location.href = 'index.html#blogs';
 
 				authenticatedUsers.push(user);
 				localStorage.setItem('authenticatedUsers', JSON.stringify(authenticatedUsers));
 				alertDisplay('Login Successful');
+
+				setTimeout (() => {
+					
+					if (user.role === 'admin' ){
+						window.location.href = '../admin.html';
+					} else {
+						window.location.href = '../index.html#blogs';
+					}
+				},3500);
 
 			} else {
 				alertDisplay ("Password is incorrect");

@@ -25,7 +25,7 @@ window.onscroll = () => {
 };
 
 // show and hide side bar functions
-function showMenubar() {
+function showMenubar () {
 	const menubar = document.querySelector(".nav-links");
 	menubar.style.display = "flex";
   }
@@ -34,13 +34,14 @@ function showMenubar() {
 	menubar.style.display = "none";
   }
 
-//
+//log out a user
 document.addEventListener('DOMContentLoaded', (e) => {
 	let authenticatedUsers = JSON.parse(localStorage.getItem('authenticatedUsers')) || [];
 	console.log(authenticatedUsers);
 	if(authenticatedUsers.length > 0){
 		let signInLi = document.querySelector('#signInLi');
 		let signInLi2 = document.querySelector('#signInLi2');
+		
 
 		if(signInLi || signInLi2){
 			signInLi.textContent = 'Sign out';

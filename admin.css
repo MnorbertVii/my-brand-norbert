@@ -82,7 +82,7 @@ a {
   padding: 10px;
   margin-bottom: 30px;
 }
-nav ul li a:hover {
+nav ul li :hover {
   border-bottom: 1px solid var(--primary);
 }
 

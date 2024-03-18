@@ -10,7 +10,7 @@
     <nav>
       <ul>
         <li>
-          <a href="index.html#home"
+          <a id="out" href="/index.html"  
             ><svg
               width="20"
               height="20"
@@ -38,9 +38,16 @@
       <section id="messages">
         <div class="title">
           <h2>Messages from users</h2>
+
+          <svg id="notificationsOff" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 17V15H2.375V8C2.375 6.61667 2.86979 5.3875 3.85938 4.3125C4.84896 3.2375 6.13542 2.53333 7.71875 2.2V1.5C7.71875 1.08333 7.89193 0.729167 8.23828 0.4375C8.58464 0.145833 9.00521 0 9.5 0C9.99479 0 10.4154 0.145833 10.7617 0.4375C11.1081 0.729167 11.2812 1.08333 11.2812 1.5V2.2C12.8646 2.53333 14.151 3.2375 15.1406 4.3125C16.1302 5.3875 16.625 6.61667 16.625 8V15H19V17H0ZM9.5 20C8.84687 20 8.28776 19.8042 7.82266 19.4125C7.35755 19.0208 7.125 18.55 7.125 18H11.875C11.875 18.55 11.6424 19.0208 11.1773 19.4125C10.7122 19.8042 10.1531 20 9.5 20ZM4.75 15H14.25V8C14.25 6.9 13.7849 5.95833 12.8547 5.175C11.9245 4.39167 10.8063 4 9.5 4C8.19375 4 7.07552 4.39167 6.14531 5.175C5.2151 5.95833 4.75 6.9 4.75 8V15Z" fill="#DCC9AA"/>
+            </svg>
+            
+
           <svg
-            width="20"
-            height="20"
+            id="notificationsOn"
+            width="23"
+            height="23"
             viewBox="0 0 31 31"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +58,7 @@
             />
           </svg>
         </div>
-        <div class="contents">
+        <div class="contents" id="messages-container">
           <h3>MUGISHA Elyse</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -224,5 +231,31 @@
         </form>
       </section>
     </main>
+
+    <script src="./Js/messages/display.js"></script>
+    <script src="./Js/blogs/createblog.js"></script>
+    <script src="./main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (e) => {
+        let authenticatedUsers = JSON.parse(localStorage.getItem('authenticatedUsers')) || [];
+        console.log(authenticatedUsers);
+        if(authenticatedUsers.length > 0){
+          let out = document.querySelector('#out');
+      
+          if(out){
+            out.href = 'index.html';
+          }
+          if(out){
+            out.addEventListener('click', () => {
+              if(out){
+                localStorage.removeItem('authenticatedUsers');
+                window.location.href = 'index.html';
+              }
+            })
+      
+          }
+        }
+      });
+    </script>
   </body>
 </html>

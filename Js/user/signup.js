@@ -3,23 +3,24 @@ const userName = document.getElementById("name");
 const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("key");
 
-
-
+if(form){
 // add event listener to prevent default submission of the form
 form.addEventListener('submit', e => {
 	e.preventDefault();
 
 	validInputs();
 });
+}
+
+
 
 // definition of an error function
-const defineError = (element, message) => {
+export const invalid = (element, message) => {
 	const input = element.parentElement;
 	const error = input.querySelector('.err');
     
 	error.innerText = message;
 	input.classList.add('err');
-	input.classList.remove('success');
 	if(message){
 		input.classList.add('.err');
 		input.addEventListener('animationend', () => {
@@ -29,23 +30,22 @@ const defineError = (element, message) => {
 }
 
 // definition of a success function
-const defineSuccess = element => {
+export const valid = element => {
 	const input = element.parentElement;
 	const error = input.querySelector('.err');
 
 	error.innerText = '';
-	input.classList.add('success');
 	input.classList.remove('err')
 }
 
 // check for a valid email
-const isEmailValid = email => {
+export const isEmailValid = email => {
 	const EmailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return EmailRegex.test(String(email).toLowerCase());
 }
 
 //definition of alert
-const alertDisplay = message => {
+export const alertDisplay = message => {
 	var alert =document.getElementsByClassName("alert");
 	alert[0].innerHTML = message;
 	alert[0].style.display = "block";
@@ -61,7 +61,7 @@ const isEmailTaken = email => {
 }
 
 // definition of the validInputs function 
-const validInputs = () => {
+export const validInputs = () => {
 	let userNameValue = userName.value.trim();
 	let userEmailValue = userEmail.value.trim();
 	let userPasswordValue = userPassword.value.trim();
@@ -69,60 +69,67 @@ const validInputs = () => {
 
 // name validation conditions
 if(userNameValue === ''){
-	defineError(userName, 'Your full name is required');
+	invalid(userName, 'Your full name is required');
 	isValid = false;
 } else {
-	defineSuccess(userName);
+	valid(userName);
 }
 
 //email validation conditions
 if(userEmailValue === ''){
-	defineError(userEmail, 'Your Email is required');
+	invalid(userEmail, 'Your Email is required');
 	isValid = false;
 } else if(!isEmailValid(userEmailValue)){
-	defineError(userEmail, 'Provide a valid email address');
+	invalid(userEmail, 'Provide a valid email address');
 	isValid = false;
 } else if(isEmailTaken(userEmailValue)){
 	alertDisplay('Sorry, email is already taken');
 	return false;
 }
  else {
-	defineSuccess(userEmail);
+	valid(userEmail);
 }
 
 // password validation conditions
 if(userPasswordValue === ''){
-	defineError(userPassword, 'password is required to protect your account');
+	invalid(userPassword, 'password is required to protect your account');
 	isValid = false;
 } else if(userPasswordValue.length < 6) {
-	defineError(userPassword, 'Password must be at least 6 characters in length')
+	invalid(userPassword, 'Password must be at least 6 characters in length')
 	isValid = false;
 } else if (!/[0-9]/.test(userPasswordValue)) {
-    defineError(userPassword, 'Password must include at least one number');
+    invalid(userPassword, 'Password must include at least one number');
 	isValid = false;
 } else {
-	defineSuccess(userPassword);
+	valid(userPassword);
 }
 
 // registering user
 if(isValid){
-	alertDisplay('Registration successful');
-	let users = JSON.parse(localStorage.getItem('users')) || [];
+	registerUser(userNameValue, userEmailValue, userPasswordValue);
+}
+}
+	const registerUser = (Name, Email, Password) => {
 
+	let users = JSON.parse(localStorage.getItem('users')) || [];
+    let role = Email === 'nimuhnorbert@gmail.com' ? 'admin' : 'user';
 	const newUser = {
 		id: crypto.randomUUID(),
-		name: userNameValue,
-		email: userEmailValue,
-		password: userPasswordValue
+		name: Name,
+		email: Email,
+		password: Password,
+		role: role
 	};
 
 	users.push(newUser);
 	localStorage.setItem('users', JSON.stringify(users));
+    alertDisplay('Registration successful now login');
+	
+	setTimeout (() => {
+		window.location.href = '../signin.html';
+	}, 3500);
 
 	userName.value = '';
 	userEmail.value = '';
 	userPassword.value = '';
 }
-}
-
-
