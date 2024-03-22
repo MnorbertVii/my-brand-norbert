@@ -69,15 +69,20 @@ document.addEventListener("DOMContentLoaded", () => {
               </p>
   
               <div class="likes-comments">
-                <div class="likes">
-                  <img src="assets/images/Vector like.svg" alt="like" />
-                  <p>10 likes</p>
-                </div>
+              <div class="likes">
+              <img
+                src="assets/images/Vector like.svg"
+                alt="like"
+                class="like-icon"
+                articleDataId="${article.id}"
+              />
+              <p class="like-count">0 likes</p>
+            </div>
                 <div class="comments">
                   <a href="singleblog.html?id=${index}"
                     ><img src="assets/images/Vector.svg" alt="comment"
                   /></a>
-                  <p>1 comment</p>
+                  <p id="comment-count">0 comment</p>
                 </div>
               </div>
             </div>
@@ -113,13 +118,109 @@ document.addEventListener("DOMContentLoaded", () => {
     <p class="leading" id="blog-description">
       ${articleData.body}
     </p>
-  <form>
-  <input type="text" placeholder="Name">
-  <textarea class="style-input" placeholder="comment"></textarea>
-  <button class="comment-btn">send</button>
+  <form id="comment-form">
+  <input type="text" id="name-input" placeholder="Name">
+  <textarea class="style-input" id ="comment-input" placeholder="comment"></textarea>
+  <button class="comment-btn" id="send-comment-btn">send</button>
+  <div class="comments" id="comments-section">
+      <h5 id="comment-count">0 comments</h5>
+      
+    </div>
   </form>
     `;
   }
 
 
+  const likeIcons = document.querySelectorAll(".like-icon");
+  likeIcons.forEach((icon) => {
+    icon.addEventListener("click", addLike);
+  });
+  
+  
+  function addLike(event) {
+  const articleId = event.target.getAttribute("articleDataId");
+  const likeCountElement = event.target.nextElementSibling;
+  const currentLikes = parseInt(likeCountElement.textContent, 10);
+  
+  
+  const newLikes = currentLikes === 0 ? 1 : 0;
+  likeCountElement.textContent = `${newLikes} like${newLikes !== 1 ? "s" : ""}`;
+  
+  console.log(`Article ${articleId}: ${newLikes} likes`);
+  }
+
+
+  // let totalComments = 0;
+
+  // const sendCommentBtn = document.getElementById('send-comment-btn');
+  // sendCommentBtn.addEventListener('click', addComment);
+
+  // function addComment(event) {
+  //   event.preventDefault();
+  //   const name = document.getElementById('name-input').value;
+  //   const comment = document.getElementById('comment-input').value;
+
+    
+  //   const commentElement = document.createElement('div');
+  //   commentElement.classList.add('comment');
+  //   commentElement.innerHTML = `
+  //     <h4>${name}</h4>
+  //     <p>${comment}</p>
+  //   `;
+
+  //   const commentsSection = document.querySelector('.comments');
+  //   commentsSection.appendChild(commentElement);
+  //   totalComments++;
+  //   const commentCountElement = document.getElementById('comment-count');
+  //   commentCountElement.textContent = `${totalComments} comment${totalComments !== 1 ? 's' : ''}`;
+  // }
+
+  let totalComments = 0;
+  const existingComments = JSON.parse(localStorage.getItem('blogComments')) || [];
+
+  
+  const commentsSection = document.getElementById('comments-section');
+  existingComments.forEach((comment) => {
+    const commentElement = createCommentElement(comment.name, comment.text);
+    commentsSection.appendChild(commentElement);
+    totalComments++;
+  });
+
+
+  const sendCommentBtn = document.getElementById('send-comment-btn');
+  sendCommentBtn.addEventListener('click', handleCommentSubmission);
+
+  function handleCommentSubmission(event) {
+    event.preventDefault();
+    const name = document.getElementById('name-input').value;
+    const comment = document.getElementById('comment-input').value;
+
+
+    const commentElement = createCommentElement(name, comment);
+    commentsSection.appendChild(commentElement);
+    totalComments++;
+
+  
+    const commentCountElement = document.getElementById('comment-count');
+    commentCountElement.textContent = `${totalComments} comment${totalComments !== 1 ? 's' : ''}`;
+
+  
+    const newComment = { name: name, text: comment };
+    existingComments.push(newComment);
+    localStorage.setItem('blogComments', JSON.stringify(existingComments));
+  }
+
+  function createCommentElement(name, comment) {
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment');
+    commentDiv.innerHTML = `
+      <h4>${name}</h4>
+      <p>${comment}</p>
+    `;
+    return commentDiv;
+  }
 });
+
+
+
+
