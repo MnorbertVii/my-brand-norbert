@@ -90,13 +90,45 @@
           <h2>Manage blogs</h2>
         </div>
         <table border="1">
-          <tr>
-            <th>Title</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Action</th>
-          </tr>
-          <tr>
+          <thead>
+
+            <tr>
+              <th>Title</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td>tech-world</td>
+              <td>
+                <img
+                  class="blog-img"
+                  src="/assets/images/avatar_1 - Copy.jpg"
+                  alt="blog image"
+                />
+              </td>
+              <td>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              </td>
+              <td>
+                <a href="singleblog.html"
+                  ><span class="action-icons" id="view-icon"
+                    ><img src="/assets/images/eye.svg" alt="" /></span
+                ></a>
+                <a href="singleblog.html"
+                  ><span class="action-icons" id="edit-icon"
+                    ><img src="/assets/images/edit.svg" alt="" /></span
+                ></a>
+                <a href="singleblog.html"
+                  ><span class="action-icons" id="delete-icon"
+                    ><img src="/assets/images/trash.svg" alt="" /></span
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+          <!-- <tr>
             <td>tech-world</td>
             <td>
               <img
@@ -176,34 +208,7 @@
                   ><img src="/assets/images/trash.svg" alt="" /></span
               ></a>
             </td>
-          </tr>
-          <tr>
-            <td>tech-world</td>
-            <td>
-              <img
-                class="blog-img"
-                src="/assets/images/avatar_1 - Copy.jpg"
-                alt="blog image"
-              />
-            </td>
-            <td>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa
-            </td>
-            <td>
-              <a href="singleblog.html"
-                ><span class="action-icons" id="view-icon"
-                  ><img src="/assets/images/eye.svg" alt="" /></span
-              ></a>
-              <a href="singleblog.html"
-                ><span class="action-icons" id="edit-icon"
-                  ><img src="/assets/images/edit.svg" alt="" /></span
-              ></a>
-              <a href="singleblog.html"
-                ><span class="action-icons" id="delete-icon"
-                  ><img src="/assets/images/trash.svg" alt="" /></span
-              ></a>
-            </td>
-          </tr>
+          </tr> -->
         </table>
       </section>
       <section id="new-blog">
@@ -211,29 +216,37 @@
           <h2>Create Your Blog Post</h2>
         </div>
 
-        <form method="post">
-          <label for="title">Title:</label><br />
-          <input type="text" id="title" name="title" /><br /><br />
-
-          <label for="photo">Photo:</label><br />
-          <input
-            type="file"
-            id="photo"
-            name="photo"
-            accept="image/*"
-            class="custom-file-input"
-          /><br /><br />
-
-          <label for="description">Description:</label><br />
-          <textarea id="description" name="description"></textarea><br /><br />
-
-          <input type="submit" />
+        <form name="createForm">
+          <div class="input">
+            <label for="title">Title:</label><br />
+            <input type="text" id="title" name="title" /><br /><br />
+            <div class="err"></div>
+          </div>
+          <div class="input">
+            <label for="photo">Photo:</label><br />
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              accept="image/*"
+              class="custom-file-input"
+            /><br/><br/>
+            <div class="err"></div>
+          </div>
+          <div class="input">
+            <label for="description">Description:</label><br />
+            <textarea id="description" name="description"></textarea><br /><br />
+            <div class="err"></div>
+          </div>
+          <button type="submit">Submit</button>
+          <div class="alert"></div>
         </form>
       </section>
     </main>
 
-    <script src="./Js/messages/display.js"></script>
-    <script src="./Js/blogs/createblog.js"></script>
+    <script src="./Js/messages/addMessage.js"></script>
+    <script src="./Js/blogs/addBlog.js"></script>
+    <script src="./Js/blogs/createBlog.js" type="module"></script>
     <script src="./main.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {

@@ -1,4 +1,4 @@
-import { invalid, valid,isEmailValid, alertDisplay } from "../user/signup.js";
+import { invalid, valid,isEmailValid, isNameValid } from "../user/signup.js";
 const form = document.forms['contact-form'];
 const userName = document.getElementById('name');
 const userEmail = document.getElementById('email');
@@ -20,6 +20,8 @@ const validInputs = () => {
 	if(userNameValue === ''){
 		invalid(userName, 'Your full name is required');
 		isValid = false;
+	} else if(!isNameValid(userNameValue)) {
+		invalid(userName, 'Provide a reasonable full name')
 	} else {
 		valid(userName);
 	}

@@ -44,6 +44,13 @@ export const isEmailValid = email => {
 	return EmailRegex.test(String(email).toLowerCase());
 }
 
+//check for a valid full name
+export const isNameValid = username => {
+	const NameRegex = /^[A-Z][a-z]{2,}(?: [A-Z][a-z]{2,})*$/; 
+	// ^[a-z]([-']?[a-z]+)*( [a-z]([-']?[a-z]+)*)+$;
+	return NameRegex.test(username);
+}
+
 //definition of alert
 export const alertDisplay = message => {
 	var alert =document.getElementsByClassName("alert");
@@ -71,6 +78,8 @@ export const validInputs = () => {
 if(userNameValue === ''){
 	invalid(userName, 'Your full name is required');
 	isValid = false;
+} else if(!isNameValid(userNameValue)) {
+	invalid(userName, 'Provide a reasonable full name')
 } else {
 	valid(userName);
 }

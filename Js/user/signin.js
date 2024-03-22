@@ -28,10 +28,6 @@ function validInputs (){
 
 	if(PasswordValue === ''){
 		invalid(userPassword, 'enter your password')
-	} else if(PasswordValue.length < 6){
-		invalid(userPassword, 'Password must be at least 6 characters');
-	} else if(!/[0-9]/.test(PasswordValue)){
-		invalid(userPassword, 'Password must contain a number')
 	} else {
 		valid(userPassword);
 	}
