@@ -20,18 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
       </td>
       <td>${smallDescription}</td>
       <td>
-        <a href="singleblog.html">
+        <a href="index.html#blogs">
           <span class="action-icons" id="view-icon">
             <img src="/assets/images/eye.svg" alt="" />
           </span>
         </a>
-        <a href="singleblog.html">
-          <span class="action-icons" id="edit-icon">
+        <a
+          <span class="action-icons" id="edit-icon" articleDataId = "${article.id}">
             <img src="/assets/images/edit.svg" alt="" />
           </span>
         </a>
-        <a href="singleblog.html">
-          <span class="action-icons" id="delete-icon">
+        <a
+          <span class="action-icons" id="delete-icon" articleDataId = "${article.id}">
             <img src="/assets/images/trash.svg" alt="" />
           </span>
         </a>
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <p>10 likes</p>
                 </div>
                 <div class="comments">
-                  <a href="singleblog.html"
+                  <a href="singleblog.html?id=${index}"
                     ><img src="assets/images/Vector.svg" alt="comment"
                   /></a>
                   <p>1 comment</p>
@@ -85,15 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       blogContents.innerHTML += blog;
     })
+    if (Articles.length === 0) {
+      const noBlogsMessage = document.createElement('h1');
+      noBlogsMessage.textContent = 'There are no blogs to display.';
+      noBlogsMessage.style.textAlign = 'center';
+      noBlogsMessage.style.color = '#dcc9aa';
+      blogContents.appendChild(noBlogsMessage);
+    }
   }
         
-  if (Articles.length === 0) {
-    const noBlogsMessage = document.createElement('h1');
-    noBlogsMessage.textContent = 'There are no blogs to display.';
-    noBlogsMessage.style.textAlign = 'center';
-    noBlogsMessage.style.color = '#dcc9aa';
-    blogContents.appendChild(noBlogsMessage);
-  }
 
   function getArticleById(id) {
     return Articles.find(article => article.id === id);

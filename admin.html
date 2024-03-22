@@ -217,6 +217,7 @@
         </div>
 
         <form name="createForm">
+          <input type="hidden" id="edit-article-id" name="edit-article-id" />
           <div class="input">
             <label for="title">Title:</label><br />
             <input type="text" id="title" name="title" /><br /><br />
@@ -224,6 +225,7 @@
           </div>
           <div class="input">
             <label for="photo">Photo:</label><br />
+            <img id="current-image-display" src="" alt="Current Image"  style="max-width: 100px; display: none"><br />
             <input
               type="file"
               id="photo"
@@ -246,6 +248,8 @@
 
     <script src="./Js/messages/addMessage.js"></script>
     <script src="./Js/blogs/addBlog.js"></script>
+    <script src="./Js/blogs/deleteBlog.js"></script>
+    <script src="./Js/blogs/editBlog.js" type="module"></script>
     <script src="./Js/blogs/createBlog.js" type="module"></script>
     <script src="./main.js"></script>
     <script>
