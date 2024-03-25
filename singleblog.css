@@ -146,25 +146,39 @@ textarea {
   background: var(--universal);
   cursor: pointer;
 }
-.comments {
+.comments, #comments-list {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   width: 100%;
   grid-column: 2/9;
 }
-.comments h5 {
+#comments-list{
+  grid-column: 1/9;
+}
+
+h5 {
+  color: var(--secondary);
   grid-column: 1/9;
   margin-bottom: 20px;
 }
-.comments h4 {
+h4 {
   grid-column: 1/9;
   margin-bottom: 20px;
 }
-.comments p {
+p {
   grid-column: 1/9;
-  padding-bottom: 20px;
-  border-bottom: 1px solid white;
+  padding-bottom: 50px;
+  border-bottom: 0.1px solid white;
   width: 90%;
+  word-wrap: break-word;
+}
+#delete{
+  margin-top: -85px;
+}
+#delete:hover{
+  color: var(--primary);
+  cursor: pointer;
+
 }
 /* tablet screens */
 

@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Articles.forEach((article, index) => {
       localStorage.setItem('article_' + index, article.id);
       const smallDescription = article.body.slice(0, 30);
+      const commentCount = countCommentsForArticle(article.id);
       const blog = `
       <div class="first-blog grid">
               <img src="${article.image}" alt="avatar" />
@@ -82,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <a href="singleblog.html?id=${index}"
                     ><img src="assets/images/Vector.svg" alt="comment"
                   /></a>
-                  <p id="comment-count">0 comment</p>
+                  <p id="comment-count"> ${commentCount} ${commentCount !== 1 ? 'comments' : 'comment'}</p>
                 </div>
               </div>
             </div>
@@ -121,35 +122,83 @@ document.addEventListener("DOMContentLoaded", () => {
   <form id="comment-form">
   <input type="text" id="name-input" placeholder="Name">
   <textarea class="style-input" id ="comment-input" placeholder="comment"></textarea>
-  <button class="comment-btn" id="send-comment-btn">send</button>
+  <button class="comment-btn" id="send-comment-btn" articleDataId="${articleData.id}">send</button>
   <div class="comments" id="comments-section">
       <h5 id="comment-count">0 comments</h5>
-      
+      <div id="comment-list"></div>
     </div>
   </form>
     `;
+    loadComments();
+    document.getElementById('send-comment-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      const articleId = e.target.getAttribute("articleDataId");
+      addComment(articleId);
+    });
   }
-
 
   const likeIcons = document.querySelectorAll(".like-icon");
   likeIcons.forEach((icon) => {
+    const articleId = icon.getAttribute("articleDataId");
+    const isLiked = localStorage.getItem(`liked_${articleId}`) === 'true';
+    const likeCountElement = icon.nextElementSibling;
+    likeCountElement.textContent = isLiked ? "1 like" : "0 likes";
     icon.addEventListener("click", addLike);
   });
   
-  
-  function addLike(event) {
-  const articleId = event.target.getAttribute("articleDataId");
-  const likeCountElement = event.target.nextElementSibling;
-  const currentLikes = parseInt(likeCountElement.textContent, 10);
-  
-  
-  const newLikes = currentLikes === 0 ? 1 : 0;
-  likeCountElement.textContent = `${newLikes} like${newLikes !== 1 ? "s" : ""}`;
-  
-  console.log(`Article ${articleId}: ${newLikes} likes`);
-  }
+
+
+
 });
 
+function loadComments(currentArticleId) {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const commentList = document.getElementById('comment-list');
+  commentList.innerHTML = '';
+  comments.forEach((comment, index) => {
+    if (comment.currentArticleId === currentArticleId) {
+    commentList.innerHTML += `
+    <h4>${comment.name}</h4>
+    <p>${comment.text}</p>
+    <h5 id="delete" onclick="deleteComment(${index})">Delete</h5>
+    `;
+    }
+  });
+  document.getElementById('comment-count').textContent = `${comments.length} comment${comments.length !== 1 ? 's' : ''}`;
+}
+
+function addComment(articleId) {
+  
+  const nameInput = document.getElementById('name-input');
+  const commentInput = document.getElementById('comment-input');
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.push({ articleId:articleId, name: nameInput.value, text: commentInput.value });
+  localStorage.setItem('comments', JSON.stringify(comments));
+  nameInput.value = '';
+  commentInput.value = '';
+  loadComments();
+}
+
+function deleteComment(index) {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.splice(index, 1);
+  localStorage.setItem('comments', JSON.stringify(comments));
+  loadComments();
+}
 
 
+function addLike(event) {
+  const icon = event.target;
+  const articleId = icon.getAttribute("articleDataId");
+  const likeCountElement = icon.nextElementSibling;
+  const isLiked = localStorage.getItem(`liked_${articleId}`) !== 'true';
+  localStorage.setItem(`liked_${articleId}`, isLiked);
+  const newLikes = isLiked ? 1 : 0;
+  likeCountElement.textContent = `${newLikes} like${newLikes !== 1 ? "s" : ""}`;
+}
+
+function countCommentsForArticle(articleId) {
+  const comments = JSON.parse(localStorage.getItem('comments')) || [];
+  return comments.filter(comment => comment.articleId === articleId).length;
+}
 

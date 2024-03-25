@@ -55,7 +55,7 @@ function validInputs (){
 					if (user.role === 'admin' ){
 						window.location.href = '../admin.html';
 					} else {
-						window.location.href = '../index.html#blogs';
+						window.location.href = '../index.html#home';
 					}
 				},3500);
 

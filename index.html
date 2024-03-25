@@ -20,6 +20,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#blogs">Blogs</a></li>
           <li><a href="#contact">Contact me</a></li>
+          <li><a id="dashboard-nav">Dashboard</a></li>
           <li><a href="signin.html" id="signInLi">Sign in</a></li>
         </ul>
       </div>
@@ -58,6 +59,7 @@
         <a onclick="hideMenubar()" href="#projects">Projects</a>
         <a onclick="hideMenubar()" href="#blogs">Blogs</a>
         <a onclick="hideMenubar()" href="#contact">Contact me</a>
+        <a onclick="hideMenubar()" id="dashboard-nav">Dashboard</a>
         <a onclick="hideMenubar()" href="signin.html" id="signInLi2">Sign in</a>
       </div>
     </nav>
@@ -66,6 +68,7 @@
       <!-- home section -->
       <section id="home" class="grid">
         <div class="welcome-img">
+          <div class="alert-0"></div>
           <img src="assets/images/passport-2.jpg" alt="my face" />
         </div>
         <div class="welcome-texts">
@@ -373,13 +376,14 @@
           </li>
         </div>
         <p>&#169;2024, All rights reserved</p>
+        
       </div>
     </footer>
 
 
     <!-- scripts -->
     <script src="main.js"></script>
-    <script src="./Js/blogs/addBlog.js"></script>
+    <script src="./Js/blogs/addBlog.js" type="module"></script>
     <script src="./Js/messages/sendMessage.js" type="module"></script>
   </body>
 </html>

@@ -30,6 +30,7 @@
         </li>
         <li><a href="admin.html">messages</a></li>
         <li><a href="admin.html#blogs">blogs panel</a></li>
+        <li><a href="index.html#home">Back home</a></li>
         <li><a href="admin.html">settings</a></li>
       </ul>
     </nav>
@@ -255,7 +256,6 @@
     <script>
       document.addEventListener('DOMContentLoaded', (e) => {
         let authenticatedUsers = JSON.parse(localStorage.getItem('authenticatedUsers')) || [];
-        console.log(authenticatedUsers);
         if(authenticatedUsers.length > 0){
           let out = document.querySelector('#out');
       
